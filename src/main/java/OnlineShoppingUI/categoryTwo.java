@@ -8,26 +8,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class categoryTwo 
-{
-
-    public static void main(String[] args) 
-    {
-
+public class categoryTwo extends JFrame{
+    
+    public categoryTwo(){
+        
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
         JLabel label = new JLabel("PANTS");
         JLabel pantsOneName = new JLabel("P489 | Men Drawstring Waist Straight Leg Pants");
         JLabel pantsTwoName = new JLabel("P591 | Men Flap Pocket Side Cargo Pants");
         
-        ImageIcon logo = new ImageIcon(categoryTwo.class.getResource("smallshoope.png"));
-        JLabel logolabel = new JLabel(logo);
-        
-        ImageIcon pantsOne = new ImageIcon(categoryTwo.class.getResource("Men Drawstring Waist Straight Leg Pants.png"));
-        JLabel pantsOneLabel = new JLabel(pantsOne);
-        
-        ImageIcon pantsTwo = new ImageIcon(categoryTwo.class.getResource("Men Flap Pocket Side Cargo Pants.png"));
-        JLabel pantsTwoLabel = new JLabel(pantsTwo);
+//        ImageIcon logo = new ImageIcon("smallshoope.png");
+//        JLabel logolabel = new JLabel();
+//        
+//        ImageIcon pantsOne = new ImageIcon("Men Drawstring Waist Straight Leg Pants.png");
+//        JLabel pantsOneLabel = new JLabel(pantsOne);
+//        
+//        ImageIcon pantsTwo = new ImageIcon("Men Flap Pocket Side Cargo Pants.png");
+//        JLabel pantsTwoLabel = new JLabel(pantsTwo);
 
         
         //panel settings
@@ -35,14 +33,15 @@ public class categoryTwo
         panel.setBackground(Color.gray);
         
         //label settings
-        logolabel.setBounds(20, 20, 100, 100);
-        frame.add(logolabel);
-        
-        pantsOneLabel.setBounds (20, 150, 100, 123);
-        frame.add(pantsOneLabel);
-        
-        pantsTwoLabel.setBounds(20, 350, 100, 123);
-        frame.add(pantsTwoLabel);
+//        logolabel.setIcon(logo);
+//        logolabel.setBounds(20, 20, 100, 100);
+//        frame.add(logolabel);
+//        
+//        pantsOneLabel.setBounds (20, 150, 100, 123);
+//        frame.add(pantsOneLabel);
+//        
+//        pantsTwoLabel.setBounds(20, 350, 100, 123);
+//        frame.add(pantsTwoLabel);
 
         label.setBounds(350, 0, 200, 100);
         
@@ -80,6 +79,11 @@ public class categoryTwo
         
         frame.setVisible(true);
         
+    }
+
+    public static void main(String[] args) 
+    {
+        new categoryTwo();
     }
     
 }
