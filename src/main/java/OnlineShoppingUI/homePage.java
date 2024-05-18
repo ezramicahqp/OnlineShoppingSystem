@@ -3,22 +3,20 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import javax.swing.Icon;
 
 public class homePage extends JFrame{
     public homePage(){
         JFrame tonsay = new JFrame();
-        tonsay.setBackground(Color.PINK);
-        
         JPanel layout = new JPanel();
         
         tonsay.setSize(900,700);
         tonsay.setName("Homepage");
         tonsay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tonsay.setLayout(new BorderLayout());
         tonsay.setVisible(true);
         
         tonsay.add(layout);
-       
+
        JButton btncart = new JButton("Cart");
        btncart.setBounds(750,20,70,40);
        btncart.setFont(new Font("Serif",Font.BOLD, 12));
@@ -68,23 +66,33 @@ public class homePage extends JFrame{
        ImageIcon logol = new ImageIcon("logo.jpg");
        JLabel logolbl = new JLabel(logol);
        logolbl.setIcon(logol);
-       logolbl.setBounds(50, 20, 133, 133);
+       logolbl.setBounds(100, 50, 50, 50);
        tonsay.add(logolbl);
        logolbl.validate();
-       
        
        ImageIcon blouse = new ImageIcon("blouse.jpg");
        JLabel toplabel = new JLabel(blouse);
        toplabel.setIcon(blouse);
-       toplabel.setBounds(50, 500, 133,177);
+       toplabel.setBounds(50, 580, 113,150);
        tonsay.add(toplabel);
        toplabel.validate();
        
-
+       
+       layout.setBackground(new Color(244,205,241));
+       layout.setPreferredSize(new Dimension (100,90));
        layout.add(btncart);
        layout.add(btncategory);
+       layout.add(label);
+       layout.add(price1);
+       layout.add(price2);
+       layout.add(price3);
+       layout.add(price4);
+       layout.add(price5);
+       layout.add(price6);
+   
        layout.add(logolbl);
        layout.add(toplabel);
+       
     }
     
     public static void main(String[] args) {
