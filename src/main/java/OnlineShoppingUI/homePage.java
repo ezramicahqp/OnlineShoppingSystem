@@ -13,8 +13,6 @@ public class homePage extends JFrame{
         tonsay.setName("Homepage");
         tonsay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tonsay.setLayout(new BorderLayout());
-        tonsay.setVisible(true);
-        
         tonsay.add(layout);
 
        JButton btncart = new JButton("Cart");
@@ -93,6 +91,9 @@ public class homePage extends JFrame{
        layout.add(logolbl);
        layout.add(toplabel);
        
+       
+        tonsay.setVisible(true);
+        
     }
     
     public static void main(String[] args) {
