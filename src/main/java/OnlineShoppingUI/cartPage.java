@@ -60,24 +60,28 @@ public class cartPage extends JFrame{
         JTextField txtSize = new JTextField();
         txtSize.setBounds(550, 90, 50, 20);
         txtSize.setEditable(false);
+        txtSize.setBorder(null);
         
         JLabel lblProductColor = new JLabel("color:");
         lblProductColor.setBounds(350, 90, 500, 20);
         JTextField txtColor = new JTextField();
         txtColor.setBounds(400, 90, 50, 20);
         txtColor.setEditable(false);
+        txtColor.setBorder(null);
         
         JLabel lblProductPrice = new JLabel("price:");
         lblProductPrice.setBounds(350, 130, 500, 20);
         JTextField txtPrice = new JTextField();
         txtPrice.setBounds(400, 130, 50, 20);
         txtPrice.setEditable(false);
+        txtPrice.setBorder(null);
         
         JLabel lblProductQuantity = new JLabel("quantity:");
         lblProductQuantity.setBounds(650, 90, 500, 20);
         JTextField txtQuantity = new JTextField();
         txtQuantity.setBounds(700, 90, 50, 20);
         txtQuantity.setEditable(false);
+        txtQuantity.setBorder(null);
         
         JCheckBox checkBox = new JCheckBox();
         checkBox.setSize(20, 20);
@@ -98,24 +102,28 @@ public class cartPage extends JFrame{
         JTextField txtSize2 = new JTextField();
         txtSize2.setBounds(550, 90, 50, 20);
         txtSize2.setEditable(false);
+        txtSize2.setBorder(null);
         
         JLabel lblProductColor2 = new JLabel("color:");
         lblProductColor2.setBounds(350, 90, 500, 20);
         JTextField txtColor2 = new JTextField();
         txtColor2.setBounds(400, 90, 50, 20);
         txtColor2.setEditable(false);
+        txtColor2.setBorder(null);
         
         JLabel lblProductPrice2 = new JLabel("price:");
         lblProductPrice2.setBounds(350, 130, 500, 20);
         JTextField txtPrice2 = new JTextField();
         txtPrice2.setBounds(400, 130, 50, 20);
         txtPrice2.setEditable(false);
+        txtPrice2.setBorder(null);
         
         JLabel lblProductQuantity2 = new JLabel("quantity:");
         lblProductQuantity2.setBounds(650, 90, 500, 20);
         JTextField txtQuantity2 = new JTextField();
         txtQuantity2.setBounds(700, 90, 50, 20);
         txtQuantity2.setEditable(false);
+        txtQuantity2.setBorder(null);
         
         JCheckBox checkBox2 = new JCheckBox();
         checkBox2.setSize(20, 20);
