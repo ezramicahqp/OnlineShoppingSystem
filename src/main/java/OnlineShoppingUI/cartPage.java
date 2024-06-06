@@ -19,6 +19,7 @@ public class cartPage extends JFrame{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("shOOPe");
         frame.setVisible(true);
+        frame.setLayout(null);
         frame.add(panel);
         frame.add(pnlproduct);
         frame.add(pnlproduct2);
@@ -66,16 +67,16 @@ public class cartPage extends JFrame{
         txtColor.setBounds(400, 90, 50, 20);
         txtColor.setEditable(false);
         
-        JLabel lblProductPrize = new JLabel("prize:");
-        lblProductPrize.setBounds(350, 120, 500, 20);
-        JTextField txtPrize = new JTextField();
-        txtPrize.setBounds(400, 120, 50, 20);
-        txtPrize.setEditable(false);
+        JLabel lblProductPrice = new JLabel("price:");
+        lblProductPrice.setBounds(350, 130, 500, 20);
+        JTextField txtPrice = new JTextField();
+        txtPrice.setBounds(400, 130, 50, 20);
+        txtPrice.setEditable(false);
         
         JLabel lblProductQuantity = new JLabel("quantity:");
-        lblProductQuantity.setBounds(500, 120, 500, 20);
+        lblProductQuantity.setBounds(650, 90, 500, 20);
         JTextField txtQuantity = new JTextField();
-        txtQuantity.setBounds(550, 120, 50, 20);
+        txtQuantity.setBounds(700, 90, 50, 20);
         txtQuantity.setEditable(false);
         
         JCheckBox checkBox = new JCheckBox();
@@ -104,16 +105,16 @@ public class cartPage extends JFrame{
         txtColor2.setBounds(400, 90, 50, 20);
         txtColor2.setEditable(false);
         
-        JLabel lblProductPrize2 = new JLabel("prize:");
-        lblProductPrize2.setBounds(350, 120, 500, 20);
-        JTextField txtPrize2 = new JTextField();
-        txtPrize2.setBounds(400, 120, 50, 20);
-        txtPrize2.setEditable(false);
+        JLabel lblProductPrice2 = new JLabel("price:");
+        lblProductPrice2.setBounds(350, 130, 500, 20);
+        JTextField txtPrice2 = new JTextField();
+        txtPrice2.setBounds(400, 130, 50, 20);
+        txtPrice2.setEditable(false);
         
         JLabel lblProductQuantity2 = new JLabel("quantity:");
-        lblProductQuantity2.setBounds(500, 120, 500, 20);
+        lblProductQuantity2.setBounds(650, 90, 500, 20);
         JTextField txtQuantity2 = new JTextField();
-        txtQuantity2.setBounds(550, 120, 50, 20);
+        txtQuantity2.setBounds(700, 90, 50, 20);
         txtQuantity2.setEditable(false);
         
         JCheckBox checkBox2 = new JCheckBox();
@@ -133,8 +134,8 @@ public class cartPage extends JFrame{
         pnlproduct.add(txtColor);
         pnlproduct.add(lblProductSize);
         pnlproduct.add(txtSize);
-        pnlproduct.add(lblProductPrize);
-        pnlproduct.add(txtPrize);
+        pnlproduct.add(lblProductPrice);
+        pnlproduct.add(txtPrice);
         pnlproduct.add(lblProductQuantity);
         pnlproduct.add(txtQuantity);
         pnlproduct.add(checkBox);
@@ -151,15 +152,15 @@ public class cartPage extends JFrame{
         pnlproduct2.add(txtColor2);
         pnlproduct2.add(lblProductSize2);
         pnlproduct2.add(txtSize2);
-        pnlproduct2.add(lblProductPrize2);
-        pnlproduct2.add(txtPrize2);
+        pnlproduct2.add(lblProductPrice2);
+        pnlproduct2.add(txtPrice2);
         pnlproduct2.add(lblProductQuantity2);
         pnlproduct2.add(txtQuantity2);
         pnlproduct2.add(checkBox2);
         pnlproduct2.add(lblPicture2);
         pnlproduct2.setSize(900, 200);
         pnlproduct2.setBounds(0, 270, 900, 200);
-        pnlproduct2.setBackground(Color.red);
+        //pnlproduct2.setBackground(Color.red);
         
         
     }
