@@ -54,24 +54,28 @@ public class CheckoutPage extends JFrame{
         JTextField txtColor = new JTextField();
         txtColor.setBounds(340, 60, 50, 20);
         txtColor.setEditable(false);
+        txtColor.setBorder(null);
         
         JLabel lblProductSize = new JLabel("size:");
         lblProductSize.setBounds(400, 60, 500, 20);
         JTextField txtSize = new JTextField();
         txtSize.setBounds(440, 60, 50, 20);
         txtSize.setEditable(false);
+        txtSize.setBorder(null);
         
         JLabel lblProductQuantity = new JLabel("quantity:");
         lblProductQuantity.setBounds(500, 60, 500, 20);
         JTextField txtQuantity = new JTextField();
         txtQuantity.setBounds(550, 60, 50, 20);
         txtQuantity.setEditable(false);
+        txtQuantity.setBorder(null);
         
         JLabel lblProductPrice = new JLabel("price:");
         lblProductPrice.setBounds(300, 110, 500, 20);
         JTextField txtPrice = new JTextField();
         txtPrice.setBounds(340, 110, 50, 20);
         txtPrice.setEditable(false);
+        txtPrice.setBorder(null);
         
         JLabel lblPicture = new JLabel();
         lblPicture.setBounds(100, 15, 130, 130);
@@ -98,16 +102,19 @@ public class CheckoutPage extends JFrame{
         txtcustomerName.setText("customer name");
         txtcustomerName.setBounds(50, 25, 450, 20);
         txtcustomerName.setEditable(false);
+        txtcustomerName.setBorder(null);
         
         JTextField txtcustomerNumber = new JTextField();
         txtcustomerNumber.setText("contact number");
         txtcustomerNumber.setBounds(500, 25, 200, 20);
         txtcustomerNumber.setEditable(false);
+        txtcustomerNumber.setBorder(null);
         
         JTextField txtcustomerAddress = new JTextField();
         txtcustomerAddress.setText("customer address");
         txtcustomerAddress.setBounds(50, 55, 650, 20);
         txtcustomerAddress.setEditable(false);
+        txtcustomerAddress.setBorder(null);
         
         
         //Panel of Customer info
@@ -124,12 +131,14 @@ public class CheckoutPage extends JFrame{
         JTextField txtdeliveryDate = new JTextField();
         txtdeliveryDate.setBounds(50, 50, 300, 20);
         txtdeliveryDate.setEditable(false);
+        txtdeliveryDate.setBorder(null);
         
         JLabel lblshippingFee = new JLabel("Shipping Fee:");
         lblshippingFee.setBounds(500, 20, 100, 20);
         JTextField txtshippingFee = new JTextField();
         txtshippingFee.setBounds(500, 50, 100, 20);
         txtshippingFee.setEditable(false);
+        txtshippingFee.setBorder(null);
         
         
         //Panel of Deliver details
@@ -175,6 +184,7 @@ public class CheckoutPage extends JFrame{
         JTextField txtTotal = new JTextField();
         txtTotal.setBounds(585, 25, 100, 20);
         txtTotal.setEditable(false);
+        txtTotal.setBorder(null);
         
         //panel of place order
         pnlplaceOrder.add(btnplaceOrder);
@@ -183,6 +193,7 @@ public class CheckoutPage extends JFrame{
         pnlplaceOrder.setSize(900, 70);
         //pnlplaceOrder.setBackground(Color.red);
         pnlplaceOrder.setBounds(0, 590, 900, 70);
+        //pnlplaceOrder.setBorder(BorderFactory.createLineBorder(Color.black));
         
         
     }
