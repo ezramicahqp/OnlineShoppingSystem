@@ -40,7 +40,14 @@ public class cartPage extends JFrame{
         JLabel label = new JLabel("My Cart");
         label.setBounds(100, 20, 80, 25);
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
-            
+        
+        //FOR TEST
+        JButton btnLogo = new JButton();
+        ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+        btnLogo.setIcon(logo);
+        btnLogo.setBounds(30, 10, 50, 50);
+        //
+        
         //MAIN PANEL
         panel.add(label);        
         panel.add(btnView);
@@ -49,6 +56,7 @@ public class cartPage extends JFrame{
         panel.setSize(900, 65);
         panel.setBackground(Color.WHITE);
         panel.setBounds(0, 0, 900, 65);
+        panel.add(btnLogo);
         
         
         // PRODUCT  1
@@ -168,7 +176,7 @@ public class cartPage extends JFrame{
         pnlproduct2.add(lblPicture2);
         pnlproduct2.setSize(900, 200);
         pnlproduct2.setBounds(0, 270, 900, 200);
-        pnlproduct2.setBackground(Color.red);
+        //pnlproduct2.setBackground(Color.red);
         
         
     }

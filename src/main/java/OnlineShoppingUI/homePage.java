@@ -69,10 +69,13 @@ public class homePage extends JFrame{
        price6.setBounds(78, 270, 150, 20);
        price6.setFont(new Font ("Times New Roman", Font.BOLD, 13));
        
-       JLabel  logo= new JLabel(); 
-       logo.setBounds(0, 0, 120, 100);
-       ImageIcon icon = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(120, 100, Image.SCALE_DEFAULT));
-       logo.setIcon(icon); 
+       //FOR TEST (CLICKABLE LOGO)
+       JButton btnLogo = new JButton();
+       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(120, 100, Image.SCALE_DEFAULT));
+       btnLogo.setIcon(logo);
+       btnLogo.setBounds(0, 0, 120, 100); 
+       //btnLogo.setBorder(null);
+       //
        
        JLabel  piclbl= new JLabel(); 
        piclbl.setBounds(90, 50, 133, 150);
@@ -110,7 +113,7 @@ public class homePage extends JFrame{
        panel.add(btncart);
        panel.add(btncategory);
        panel.add(label);
-       panel.add(logo);
+       panel.add(btnLogo);
        
        
        panel1.setBackground(new Color(244, 205, 241));
