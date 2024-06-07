@@ -51,10 +51,10 @@ public class homePage extends JFrame{
       // label2.setForeground(Color.WHITE);
        
         JLabel pricelbl = new JLabel("Price:");
-        pricelbl.setBounds(50, 220, 150, 20);
+        pricelbl.setBounds(35, 220, 100, 20);
         pricelbl.setFont(new Font ("Roboto", Font.BOLD, 13));
         JTextField txtprice = new JTextField();
-        txtprice.setBounds(90, 220, 80, 20);
+        txtprice.setBounds(75, 220, 80, 20);
         txtprice.setEditable(false);
         txtprice.setBorder(null);
         txtprice.setBackground(null);
@@ -69,10 +69,10 @@ public class homePage extends JFrame{
       
         
        JLabel pricelbl1 = new JLabel("Price:");
-       pricelbl1.setBounds(35, 220, 150, 20);
+       pricelbl1.setBounds(20, 220, 100, 20);
        pricelbl1.setFont(new Font ("Roboto", Font.BOLD, 13));
        JTextField txtprice1 = new JTextField();
-       txtprice1.setBounds(90, 220, 80, 20);
+       txtprice1.setBounds(58, 220, 80, 20);
        txtprice1.setEditable(false);
        txtprice1.setBorder(null);
        txtprice1.setBackground(null);
@@ -80,7 +80,7 @@ public class homePage extends JFrame{
        JTextField producttxt2 = new JTextField();
        producttxt2.setText("| Women's Blouse");
        producttxt2.setFont(new Font ("Roboto", Font.BOLD, 13));
-       producttxt2.setBounds(160,220,150,20);
+       producttxt2.setBounds(180,220,150,20);
        producttxt2.setEditable(false);
        producttxt2.setBorder(null);
        producttxt2.setBackground(null);
@@ -178,6 +178,7 @@ public class homePage extends JFrame{
      //panel2.add(price2);
        panel2.add(btnPic2);
        panel2.add( pricelbl1);
+       panel2.add(txtprice1);
        panel2.add(producttxt2);
        
        
