@@ -168,7 +168,7 @@ public class cartPage extends JFrame{
         pnlproduct2.add(lblPicture2);
         pnlproduct2.setSize(900, 200);
         pnlproduct2.setBounds(0, 270, 900, 200);
-        //pnlproduct2.setBackground(Color.red);
+        pnlproduct2.setBackground(Color.red);
         
         
     }
