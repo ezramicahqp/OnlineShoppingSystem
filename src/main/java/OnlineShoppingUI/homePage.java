@@ -17,7 +17,7 @@ public class homePage extends JFrame{
       
         
         tonsay.setSize(900,700);
-        tonsay.setTitle("Homepage");
+        tonsay.setTitle("shOOPe");
         tonsay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tonsay.setResizable(false);
         tonsay.setLayout(null);

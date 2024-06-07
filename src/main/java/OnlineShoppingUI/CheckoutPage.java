@@ -54,8 +54,12 @@ public class CheckoutPage extends JFrame{
         
         
         // PRODUCT  1
-        JLabel lblProductName = new JLabel("Street Weaving Spider T-shirt");
-        lblProductName.setBounds(300, 30, 500, 20);
+        JTextField txtProductName = new JTextField("Street Weaving Spider T-shirt");
+        txtProductName.setBounds(300, 30, 500, 20);
+        txtProductName.setText("Street Weaving Spider T-shirt");
+        txtProductName.setEditable(false);
+        txtProductName.setBorder(null);
+        txtProductName.setBackground(null);
         
         JLabel lblProductColor = new JLabel("color:");
         lblProductColor.setBounds(300, 60, 500, 20);
@@ -81,10 +85,10 @@ public class CheckoutPage extends JFrame{
         txtQuantity.setBorder(null);
         txtQuantity.setBackground(null);
         
-        JLabel lblProductPrice = new JLabel("price:");
-        lblProductPrice.setBounds(300, 110, 500, 20);
+        
         JTextField txtPrice = new JTextField();
-        txtPrice.setBounds(340, 110, 50, 20);
+        txtPrice.setText("Php 559");
+        txtPrice.setBounds(300, 110, 500, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
         txtPrice.setBackground(null);
@@ -95,12 +99,11 @@ public class CheckoutPage extends JFrame{
         lblPicture.setIcon(icon);
         
         //PANEL product 1
-        pnlproduct.add(lblProductName);
+        pnlproduct.add(txtProductName);
         pnlproduct.add(lblProductColor);
         pnlproduct.add(txtColor);
         pnlproduct.add(lblProductSize);
         pnlproduct.add(txtSize);
-        pnlproduct.add(lblProductPrice);
         pnlproduct.add(txtPrice);
         pnlproduct.add(lblProductQuantity);
         pnlproduct.add(txtQuantity);
@@ -144,6 +147,7 @@ public class CheckoutPage extends JFrame{
         JLabel lbldeliveryDate = new JLabel("Delivery Date:");
         lbldeliveryDate.setBounds(50, 20, 200, 20);
         JTextField txtdeliveryDate = new JTextField();
+        txtdeliveryDate.setText("August 2");
         txtdeliveryDate.setBounds(50, 50, 300, 20);
         txtdeliveryDate.setEditable(false);
         txtdeliveryDate.setBorder(null);
@@ -152,6 +156,7 @@ public class CheckoutPage extends JFrame{
         JLabel lblshippingFee = new JLabel("Shipping Fee:");
         lblshippingFee.setBounds(500, 20, 100, 20);
         JTextField txtshippingFee = new JTextField();
+        txtshippingFee.setText("Php 35");
         txtshippingFee.setBounds(500, 50, 100, 20);
         txtshippingFee.setEditable(false);
         txtshippingFee.setBorder(null);
