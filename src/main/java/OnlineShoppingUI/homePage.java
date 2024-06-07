@@ -75,13 +75,13 @@ public class homePage extends JFrame{
        logo.setIcon(icon); 
        
        JLabel  piclbl= new JLabel(); 
-       piclbl.setBounds(75, 50, 180, 150);
-       ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(160, 150, Image.SCALE_DEFAULT));
+       piclbl.setBounds(90, 50, 133, 150);
+       ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
        piclbl.setIcon(icon1); 
       
        JLabel pic2 = new JLabel();
-       pic2.setBounds(100,50,100,150);
-       ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
+       pic2.setBounds(95,50,113,150);
+       ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
        pic2.setIcon(icon2);
       
        JLabel pic3 = new JLabel(); 
@@ -111,6 +111,7 @@ public class homePage extends JFrame{
        panel.add(btncategory);
        panel.add(label);
        panel.add(logo);
+       
        
        panel1.setBackground(new Color(244, 205, 241));
        panel1.setBounds( 0 ,100,300,250);
@@ -147,7 +148,7 @@ public class homePage extends JFrame{
        panel6.add(price6);
        panel6.add(pic6);
    
-       //pearl
+
     }
     
     public static void main(String[] args) {
