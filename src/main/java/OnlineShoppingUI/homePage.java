@@ -44,8 +44,7 @@ public class homePage extends JFrame{
        label.setBounds(150,30,100,35);
        label.setFont(new Font("Times New Roman", Font.BOLD, 15));
        label.setForeground(Color.WHITE);
-      
-       
+        
        JLabel price1 = new JLabel("₱300.00 | Black Shirt");
        price1.setBounds(100 ,210,150,20);
        price1.setFont(new Font ("Times New Roman", Font.BOLD, 13));
@@ -106,7 +105,6 @@ public class homePage extends JFrame{
        pic6.setIcon(icon6);
        
        
-       
        panel.setBackground(Color.BLACK);
        panel.setBounds( 0,0,900,100);
        panel.add(btncart);
@@ -149,6 +147,7 @@ public class homePage extends JFrame{
        panel6.add(price6);
        panel6.add(pic6);
    
+       //pearl
     }
     
     public static void main(String[] args) {
