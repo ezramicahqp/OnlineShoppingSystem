@@ -40,16 +40,16 @@ public class CheckoutPage extends JFrame{
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
         label.setForeground(Color.WHITE);
         JButton btnLogo = new JButton();
-        ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(70, 55, Image.SCALE_DEFAULT));
+        ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(90, 70, Image.SCALE_DEFAULT));
         btnLogo.setIcon(logo);
-        btnLogo.setBounds(30, 5, 70, 55); 
+        btnLogo.setBounds(30, 0, 90, 70); 
         btnLogo.setBorder(null);
         
         //MAIN PANEL
         panel.add(label);
         panel.add(btnLogo);        
         panel.setSize(900, 65);
-        panel.setBackground(Color.black);
+        panel.setBackground(new Color(155, 114, 221));
         panel.setBounds(0, 0, 900, 65);
         
         
@@ -110,7 +110,7 @@ public class CheckoutPage extends JFrame{
         pnlproduct.add(lblPicture);
         pnlproduct.setSize(900, 160);
         pnlproduct.setBounds(0, 70, 900, 160);
-        pnlproduct.setBackground(Color.pink);
+        pnlproduct.setBackground(new Color(244, 205, 241));
         
         //Customer info
         JTextField txtcustomerName = new JTextField();
@@ -141,7 +141,7 @@ public class CheckoutPage extends JFrame{
         pnlcustomer.add(txtcustomerAddress);
         pnlcustomer.setSize(900, 100);
         pnlcustomer.setBounds(0, 235, 900, 100);
-        pnlcustomer.setBackground(Color.pink);
+        pnlcustomer.setBackground(new Color(244, 205, 241));
 
         //Delivery date details
         JLabel lbldeliveryDate = new JLabel("Delivery Date:");
@@ -170,7 +170,7 @@ public class CheckoutPage extends JFrame{
         pnldelivery.add(txtshippingFee);
         pnldelivery.setSize(900, 100);
         pnldelivery.setBounds(0, 340, 900, 100);
-        pnldelivery.setBackground(Color.pink);
+        pnldelivery.setBackground(new Color(244, 205, 241));
         
         //payment method
         JLabel lblpaymentMethod = new JLabel("Payment Method");
@@ -198,7 +198,7 @@ public class CheckoutPage extends JFrame{
         pnlpayment.add(btnCOD);
         pnlpayment.setSize(900, 100);
         pnlpayment.setBounds(0, 445, 900, 100);
-        pnlpayment.setBackground(Color.pink);
+        pnlpayment.setBackground(new Color(244, 205, 241));
         
         
         //Place order
