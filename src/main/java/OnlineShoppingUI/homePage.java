@@ -85,26 +85,98 @@ public class homePage extends JFrame{
        producttxt2.setBorder(null);
        producttxt2.setBackground(null);
        
-      
-       JLabel price1 = new JLabel("₱300.00 | Black Shirt");
-       price1.setBounds(100 ,210,150,20);
-       price1.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JLabel pricelbl2 = new JLabel("Price:");
+       pricelbl2.setBounds(20, 220, 100, 20);
+       pricelbl2.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField txtprice2 = new JTextField();
+       txtprice2.setBounds(58, 220, 80, 20);
+       txtprice2.setEditable(false);
+       txtprice2.setBorder(null);
+       txtprice2.setBackground(null);
        
-       JLabel price2 = new JLabel("₱350.00 | Blouse");
-       price2.setBounds(100, 210, 150, 20);
-       price2.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField producttxt3 = new JTextField();
+       producttxt3.setText("| Nike Shoes");
+       producttxt3.setFont(new Font ("Roboto", Font.BOLD, 13));
+       producttxt3.setBounds(180,220,150,20);
+       producttxt3.setEditable(false);
+       producttxt3.setBorder(null);
+       producttxt3.setBackground(null);
+       
+       JLabel pricelbl3 = new JLabel("Price:");
+       pricelbl3.setBounds(35, 270, 100, 20);
+       pricelbl3.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField txtprice3 = new JTextField();
+       txtprice3.setBounds(75, 270, 80, 20);
+       txtprice3.setEditable(false);
+       txtprice3.setBorder(null);
+       txtprice3.setBackground(null);
+       
+       JTextField producttxt4 = new JTextField();
+       producttxt4.setText("| Nike Shoes");
+       producttxt4.setFont(new Font ("Roboto", Font.BOLD, 13));
+       producttxt4.setBounds(180,270,150,20);
+       producttxt4.setEditable(false);
+       producttxt4.setBorder(null);
+       producttxt4.setBackground(null);
+       
+       JLabel pricelbl4 = new JLabel("Price:");
+       pricelbl4.setBounds(35, 270, 100, 20);
+       pricelbl4.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField txtprice4 = new JTextField();
+       txtprice4.setBounds(75, 270, 80, 20);
+       txtprice4.setEditable(false);
+       txtprice4.setBorder(null);
+       txtprice4.setBackground(null);
+       
+       JTextField producttxt5 = new JTextField();
+       producttxt5.setText("| Women's Pants");
+       producttxt5.setFont(new Font ("Roboto", Font.BOLD, 13));
+       producttxt5.setBounds(180,270,150,20);
+       producttxt5.setEditable(false);
+       producttxt5.setBorder(null);
+       producttxt5.setBackground(null);
+       
+      JLabel pricelbl5 = new JLabel("Price:");
+       pricelbl5.setBounds(35, 270, 100, 20);
+       pricelbl5.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField txtprice5 = new JTextField();
+       txtprice5.setBounds(75, 270, 80, 20);
+       txtprice5.setEditable(false);
+       txtprice5.setBorder(null);
+       txtprice5.setBackground(null);
+       
+       JTextField producttxt6 = new JTextField();
+       producttxt6.setText("| Men's Pants");
+       producttxt6.setFont(new Font ("Roboto", Font.BOLD, 13));
+       producttxt6.setBounds(180,270,150,20);
+       producttxt6.setEditable(false);
+       producttxt6.setBorder(null);
+       producttxt6.setBackground(null);
+       
+       
+       
+       
+       
+       
+      // JLabel price1 = new JLabel("₱300.00 | Black Shirt");
+      // price1.setBounds(100 ,210,150,20);
+      // price1.setFont(new Font ("Roboto", Font.BOLD, 13));
+       
+      // JLabel price2 = new JLabel("₱350.00 | Blouse");
+     //  price2.setBounds(100, 210, 150, 20);
+     //  price2.setFont(new Font ("Roboto", Font.BOLD, 13));
         
-       JLabel price3 = new JLabel("₱3,950.00 | Nike Shoes");
-       price3.setBounds(78, 210, 150, 20);
-       price3.setFont(new Font ("Roboto", Font.BOLD, 13));
+     //  JLabel price3 = new JLabel("₱3,950.00 | Nike Shoes");
+     //  price3.setBounds(78, 210, 150, 20);
+    //   price3.setFont(new Font ("Roboto", Font.BOLD, 13));
        
-       JLabel price4 = new JLabel("₱1,350.00 | Vans Shoes");
-       price4.setBounds(75, 270, 150, 20);
-       price4.setFont(new Font ("Roboto", Font.BOLD, 13));
+     //  JLabel price4 = new JLabel("₱1,350.00 | Vans Shoes");
+     //  price4.setBounds(75, 270, 150, 20);
+     //  price4.setFont(new Font ("Roboto", Font.BOLD, 13));
       
-       JLabel price5 = new JLabel("₱350.00 | Women's Pants");
-       price5.setBounds(78, 270, 200, 20);
-       price5.setFont(new Font ("Roboto", Font.BOLD, 13));
+     //  JLabel price5 = new JLabel("₱350.00 | Women's Pants");
+     //  price5.setBounds(78, 270, 200, 20);
+      // price5.setFont(new Font ("Roboto", Font.BOLD, 13));
        
        
        JLabel price6 = new JLabel("₱380.00 | Men's Pants");
@@ -113,9 +185,9 @@ public class homePage extends JFrame{
        
        //FOR TEST (CLICKABLE LOGO)
        JButton btnLogo = new JButton();
-       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
+       ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
        btnLogo.setIcon(logo);
-       btnLogo.setBounds(30, 20, 80, 60); 
+       btnLogo.setBounds(20, 10, 100, 80); 
        btnLogo.setBorder(null);
        
        
@@ -156,7 +228,7 @@ public class homePage extends JFrame{
        btnPic6.setBorder(null);
        
        
-       panel.setBackground(Color.BLACK);
+       panel.setBackground(new Color(155, 114, 221));
        panel.setBounds( 0,0,900,100);
        panel.add(btncart);
        panel.add(btncategory);
@@ -165,7 +237,7 @@ public class homePage extends JFrame{
        panel.add(btnLogo);
        
        
-       panel1.setBackground(Color.pink);
+       panel1.setBackground(new Color(244, 205, 241));
        panel1.setBounds( 0 ,100,300,250);
      //panel1.add(price1);
        panel1.add(btnPic1);
@@ -173,7 +245,7 @@ public class homePage extends JFrame{
        panel1.add(txtprice);
        panel1.add(producttxt1);
        
-       panel2.setBackground(Color.pink);
+       panel2.setBackground(new Color(244, 205, 241));
        panel2.setBounds( 300 ,100,300,250);
      //panel2.add(price2);
        panel2.add(btnPic2);
@@ -182,29 +254,41 @@ public class homePage extends JFrame{
        panel2.add(producttxt2);
        
        
-       panel3.setBackground (Color.pink);
+       panel3.setBackground (new Color(244, 205, 241));
        panel3.setBounds( 600,100,300,250);
-       panel3.add(price3);
+     //panel3.add(price3);
        panel3.add(btnPic3);
+       panel3.add( pricelbl2);
+       panel3.add(txtprice2);
+       panel3.add(producttxt3);
       
        
-       panel4.setBackground(Color.pink);
+       panel4.setBackground(new Color(244, 205, 241));
        panel4.setBounds( 0,350,300,350);
-       panel4.add(price4);
+     //panel4.add(price4);
        panel4.add(btnPic4);
+       panel4.add( pricelbl3);
+       panel4.add(txtprice3);
+       panel4.add(producttxt4);
        
        
-       panel5.setBackground(Color.pink);
+       panel5.setBackground(new Color(244, 205, 241));
        panel5.setBounds( 300,350,300,350);
-       panel5.add(price5);
+     //panel5.add(price5);
        panel5.add(btnPic5);
+       panel5.add( pricelbl4);
+       panel5.add(txtprice4);
+       panel5.add(producttxt5);
        
        
-       panel6.setBackground(Color.pink);
+       
+       panel6.setBackground(new Color(244, 205, 241));
        panel6.setBounds( 600,350,300,350);
-       panel6.add(price6);
+     //panel6.add(price6);
        panel6.add(btnPic6);
-   
+       panel6.add( pricelbl5);
+       panel6.add(txtprice5);
+       panel6.add(producttxt6);
 
     }
     
