@@ -17,7 +17,7 @@ public class homePage extends JFrame{
       
         
         tonsay.setSize(900,700);
-        tonsay.setTitle("shOOPe");
+        tonsay.setTitle("Homepage");
         tonsay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tonsay.setResizable(false);
         tonsay.setLayout(null);
@@ -34,41 +34,82 @@ public class homePage extends JFrame{
         
        JButton btncart = new JButton("Cart");
        btncart.setBounds(780,30,70,30);
-       btncart.setFont(new Font("Times New Roman",Font.BOLD, 12));
+       btncart.setFont(new Font("Roboto",Font.BOLD, 12));
        
        JButton btncategory = new JButton("Category");
        btncategory.setBounds(680,30,90,30);
-       btncategory.setFont(new Font("Times New Roman",Font.BOLD, 12));
+       btncategory.setFont(new Font("Roboto",Font.BOLD, 12));
          
        JLabel label = new JLabel ("HOMEPAGE");
        label.setBounds(150,30,100,35);
        label.setFont(new Font("Times New Roman", Font.BOLD, 15));
        label.setForeground(Color.WHITE);
+       
+      // JLabel label2 = new JLabel ("shOOPe");
+      // label2.setBounds(150,50,100,35);
+      // label2.setFont(new Font("Times New Roman", Font.BOLD, 15));
+      // label2.setForeground(Color.WHITE);
+       
+        JLabel pricelbl = new JLabel("Price:");
+        pricelbl.setBounds(50, 220, 150, 20);
+        pricelbl.setFont(new Font ("Roboto", Font.BOLD, 13));
+        JTextField txtprice = new JTextField();
+        txtprice.setBounds(90, 220, 80, 20);
+        txtprice.setEditable(false);
+        txtprice.setBorder(null);
+        txtprice.setBackground(null);
         
+        JTextField producttxt1 = new JTextField();
+        producttxt1.setText("| Black Shirt");
+        producttxt1.setFont(new Font ("Roboto", Font.BOLD, 13));
+        producttxt1.setBounds(190,220,150,20);
+        producttxt1.setEditable(false);
+        producttxt1.setBorder(null);
+        producttxt1.setBackground(null);
+      
+        
+       JLabel pricelbl1 = new JLabel("Price:");
+       pricelbl1.setBounds(35, 220, 150, 20);
+       pricelbl1.setFont(new Font ("Roboto", Font.BOLD, 13));
+       JTextField txtprice1 = new JTextField();
+       txtprice1.setBounds(90, 220, 80, 20);
+       txtprice1.setEditable(false);
+       txtprice1.setBorder(null);
+       txtprice1.setBackground(null);
+       
+       JTextField producttxt2 = new JTextField();
+       producttxt2.setText("| Women's Blouse");
+       producttxt2.setFont(new Font ("Roboto", Font.BOLD, 13));
+       producttxt2.setBounds(160,220,150,20);
+       producttxt2.setEditable(false);
+       producttxt2.setBorder(null);
+       producttxt2.setBackground(null);
+       
+      
        JLabel price1 = new JLabel("₱300.00 | Black Shirt");
        price1.setBounds(100 ,210,150,20);
-       price1.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price1.setFont(new Font ("Roboto", Font.BOLD, 13));
        
        JLabel price2 = new JLabel("₱350.00 | Blouse");
        price2.setBounds(100, 210, 150, 20);
-       price2.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price2.setFont(new Font ("Roboto", Font.BOLD, 13));
         
        JLabel price3 = new JLabel("₱3,950.00 | Nike Shoes");
        price3.setBounds(78, 210, 150, 20);
-       price3.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price3.setFont(new Font ("Roboto", Font.BOLD, 13));
        
        JLabel price4 = new JLabel("₱1,350.00 | Vans Shoes");
        price4.setBounds(75, 270, 150, 20);
-       price4.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price4.setFont(new Font ("Roboto", Font.BOLD, 13));
       
        JLabel price5 = new JLabel("₱350.00 | Women's Pants");
-       price5.setBounds(78, 270, 150, 20);
-       price5.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price5.setBounds(78, 270, 200, 20);
+       price5.setFont(new Font ("Roboto", Font.BOLD, 13));
        
        
        JLabel price6 = new JLabel("₱380.00 | Men's Pants");
        price6.setBounds(78, 270, 150, 20);
-       price6.setFont(new Font ("Times New Roman", Font.BOLD, 13));
+       price6.setFont(new Font ("Roboto", Font.BOLD, 13));
        
        //FOR TEST (CLICKABLE LOGO)
        JButton btnLogo = new JButton();
@@ -76,7 +117,7 @@ public class homePage extends JFrame{
        btnLogo.setIcon(logo);
        btnLogo.setBounds(30, 20, 80, 60); 
        btnLogo.setBorder(null);
-       //
+       
        
        JButton btnPic1 = new JButton();
        btnPic1.setBounds(90, 50, 133, 150);
@@ -112,7 +153,7 @@ public class homePage extends JFrame{
        btnPic6.setBounds(100,80,100,150);
        ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
        btnPic6.setIcon(icon6);
-       //btnPic6.setBorder(null);
+       btnPic6.setBorder(null);
        
        
        panel.setBackground(Color.BLACK);
@@ -120,40 +161,45 @@ public class homePage extends JFrame{
        panel.add(btncart);
        panel.add(btncategory);
        panel.add(label);
+    // panel.add(label2);
        panel.add(btnLogo);
        
        
        panel1.setBackground(Color.pink);
        panel1.setBounds( 0 ,100,300,250);
-       panel1.add(price1);
+     //panel1.add(price1);
        panel1.add(btnPic1);
+       panel1.add(pricelbl);
+       panel1.add(txtprice);
+       panel1.add(producttxt1);
        
-       
-       panel2.setBackground(new Color(244, 205, 241));
+       panel2.setBackground(Color.pink);
        panel2.setBounds( 300 ,100,300,250);
-       panel2.add(price2);
+     //panel2.add(price2);
        panel2.add(btnPic2);
+       panel2.add( pricelbl1);
+       panel2.add(producttxt2);
        
        
-       panel3.setBackground(new Color(244, 205, 241));
+       panel3.setBackground (Color.pink);
        panel3.setBounds( 600,100,300,250);
        panel3.add(price3);
        panel3.add(btnPic3);
       
        
-       panel4.setBackground(new Color(244, 205, 241));
+       panel4.setBackground(Color.pink);
        panel4.setBounds( 0,350,300,350);
        panel4.add(price4);
        panel4.add(btnPic4);
        
        
-       panel5.setBackground(new Color(244, 205, 241));
+       panel5.setBackground(Color.pink);
        panel5.setBounds( 300,350,300,350);
        panel5.add(price5);
        panel5.add(btnPic5);
        
        
-       panel6.setBackground(new Color(244, 205, 241));
+       panel6.setBackground(Color.pink);
        panel6.setBounds( 600,350,300,350);
        panel6.add(price6);
        panel6.add(btnPic6);
