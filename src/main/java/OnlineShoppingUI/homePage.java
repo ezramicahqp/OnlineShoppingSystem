@@ -65,6 +65,7 @@ public class homePage extends JFrame{
        price5.setBounds(78, 270, 150, 20);
        price5.setFont(new Font ("Times New Roman", Font.BOLD, 13));
        
+       
        JLabel price6 = new JLabel("₱380.00 | Men's Pants");
        price6.setBounds(78, 270, 150, 20);
        price6.setFont(new Font ("Times New Roman", Font.BOLD, 13));
@@ -74,38 +75,44 @@ public class homePage extends JFrame{
        ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(120, 100, Image.SCALE_DEFAULT));
        btnLogo.setIcon(logo);
        btnLogo.setBounds(0, 0, 120, 100); 
-       //btnLogo.setBorder(null);
+       btnLogo.setBorder(null);
        //
        
-       JLabel  piclbl= new JLabel(); 
-       piclbl.setBounds(90, 50, 133, 150);
+       JButton btnPic1 = new JButton();
+       btnPic1.setBounds(90, 50, 133, 150);
        ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
-       piclbl.setIcon(icon1); 
+       btnPic1.setIcon(icon1);
+       btnPic1.setBorder(null);
       
-       JLabel pic2 = new JLabel();
-       pic2.setBounds(95,50,113,150);
+       JButton btnPic2 = new JButton();
+       btnPic2.setBounds(95,50,113,150);
        ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
-       pic2.setIcon(icon2);
+       btnPic2.setIcon(icon2);
+       btnPic2.setBorder(null);
       
-       JLabel pic3 = new JLabel(); 
-       pic3.setBounds(75,50,135,150);
+       JButton btnPic3 = new JButton();
+       btnPic3.setBounds(75,50,135,150);
        ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
-       pic3.setIcon(icon3);
+       btnPic3.setIcon(icon3);
+       btnPic3.setBorder(null);
       
-       JLabel pic4 = new JLabel(); 
-       pic4.setBounds(55,100,180,100);
+       JButton btnPic4 = new JButton(); 
+       btnPic4.setBounds(55,100,180,100);
        ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
-       pic4.setIcon(icon4);
+       btnPic4.setIcon(icon4);
+       btnPic4.setBorder(null);
        
-       JLabel pic5 = new JLabel(); 
-       pic5.setBounds(100,80,100,150);
+       JButton btnPic5 = new JButton();  
+       btnPic5.setBounds(100,80,100,150);
        ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
-       pic5.setIcon(icon5);
+       btnPic5.setIcon(icon5);
+       btnPic5.setBorder(null);
       
-       JLabel pic6 = new JLabel(); 
-       pic6.setBounds(100,80,100,150);
+       JButton btnPic6 = new JButton();  
+       btnPic6.setBounds(100,80,100,150);
        ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
-       pic6.setIcon(icon6);
+       btnPic6.setIcon(icon6);
+       //btnPic6.setBorder(null);
        
        
        panel.setBackground(Color.BLACK);
@@ -119,37 +126,37 @@ public class homePage extends JFrame{
        panel1.setBackground(new Color(244, 205, 241));
        panel1.setBounds( 0 ,100,300,250);
        panel1.add(price1);
-       panel1.add(piclbl);
+       panel1.add(btnPic1);
        
        
        panel2.setBackground(new Color(244, 205, 241));
        panel2.setBounds( 300 ,100,300,250);
        panel2.add(price2);
-       panel2.add(pic2);
+       panel2.add(btnPic2);
        
        
        panel3.setBackground(new Color(244, 205, 241));
        panel3.setBounds( 600,100,300,250);
        panel3.add(price3);
-       panel3.add(pic3);
+       panel3.add(btnPic3);
       
        
        panel4.setBackground(new Color(244, 205, 241));
        panel4.setBounds( 0,350,300,350);
        panel4.add(price4);
-       panel4.add(pic4);
+       panel4.add(btnPic4);
        
        
        panel5.setBackground(new Color(244, 205, 241));
        panel5.setBounds( 300,350,300,350);
        panel5.add(price5);
-       panel5.add(pic5);
+       panel5.add(btnPic5);
        
        
        panel6.setBackground(new Color(244, 205, 241));
        panel6.setBounds( 600,350,300,350);
        panel6.add(price6);
-       panel6.add(pic6);
+       panel6.add(btnPic6);
    
 
     }
