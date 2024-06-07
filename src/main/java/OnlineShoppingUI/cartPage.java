@@ -23,6 +23,7 @@ public class cartPage extends JFrame{
         frame.add(panel);
         frame.add(pnlproduct);
         frame.add(pnlproduct2);
+        //frame.setBackground(Color.pink);
 
         
         //BUTTONS OF MAIN PANEL
@@ -38,15 +39,18 @@ public class cartPage extends JFrame{
         
         //LABEL OF MAIN PANEL
         JLabel label = new JLabel("My Cart");
-        label.setBounds(100, 20, 80, 25);
+        label.setBounds(130, 20, 80, 25);
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        label.setForeground(Color.WHITE);
         
-        //FOR TEST
-        JButton btnLogo = new JButton();
-        ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-        btnLogo.setIcon(logo);
-        btnLogo.setBounds(30, 10, 50, 50);
-        //
+        //FOR TEST (CLICKABLE LOGO)
+       JButton btnLogo = new JButton();
+       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(70, 55, Image.SCALE_DEFAULT));
+       btnLogo.setIcon(logo);
+       btnLogo.setBounds(30, 5, 70, 55); 
+       btnLogo.setBorder(null);
+       //
+
         
         //MAIN PANEL
         panel.add(label);        
@@ -54,7 +58,7 @@ public class cartPage extends JFrame{
         panel.add(btnDelete);
         panel.add(btnCheckout);
         panel.setSize(900, 65);
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.black);
         panel.setBounds(0, 0, 900, 65);
         panel.add(btnLogo);
         
@@ -69,6 +73,7 @@ public class cartPage extends JFrame{
         txtSize.setBounds(550, 90, 50, 20);
         txtSize.setEditable(false);
         txtSize.setBorder(null);
+        txtSize.setBackground(null);
         
         JLabel lblProductColor = new JLabel("color:");
         lblProductColor.setBounds(350, 90, 500, 20);
@@ -76,6 +81,7 @@ public class cartPage extends JFrame{
         txtColor.setBounds(400, 90, 50, 20);
         txtColor.setEditable(false);
         txtColor.setBorder(null);
+        txtColor.setBackground(null);
         
         JLabel lblProductPrice = new JLabel("price:");
         lblProductPrice.setBounds(350, 130, 500, 20);
@@ -83,6 +89,7 @@ public class cartPage extends JFrame{
         txtPrice.setBounds(400, 130, 50, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
+        txtPrice.setBackground(null);
         
         JLabel lblProductQuantity = new JLabel("quantity:");
         lblProductQuantity.setBounds(650, 90, 500, 20);
@@ -90,10 +97,12 @@ public class cartPage extends JFrame{
         txtQuantity.setBounds(700, 90, 50, 20);
         txtQuantity.setEditable(false);
         txtQuantity.setBorder(null);
+        txtQuantity.setBackground(null);
         
         JCheckBox checkBox = new JCheckBox();
         checkBox.setSize(20, 20);
         checkBox.setBounds(50, 80,20, 20);
+        checkBox.setBackground(null);
         
         JLabel lblPicture = new JLabel();
         lblPicture.setBounds(150, 30, 130, 130);
@@ -111,6 +120,7 @@ public class cartPage extends JFrame{
         txtSize2.setBounds(550, 90, 50, 20);
         txtSize2.setEditable(false);
         txtSize2.setBorder(null);
+        txtSize2.setBackground(null);
         
         JLabel lblProductColor2 = new JLabel("color:");
         lblProductColor2.setBounds(350, 90, 500, 20);
@@ -118,6 +128,7 @@ public class cartPage extends JFrame{
         txtColor2.setBounds(400, 90, 50, 20);
         txtColor2.setEditable(false);
         txtColor2.setBorder(null);
+        txtColor2.setBackground(null);
         
         JLabel lblProductPrice2 = new JLabel("price:");
         lblProductPrice2.setBounds(350, 130, 500, 20);
@@ -125,6 +136,7 @@ public class cartPage extends JFrame{
         txtPrice2.setBounds(400, 130, 50, 20);
         txtPrice2.setEditable(false);
         txtPrice2.setBorder(null);
+        txtPrice2.setBackground(null);
         
         JLabel lblProductQuantity2 = new JLabel("quantity:");
         lblProductQuantity2.setBounds(650, 90, 500, 20);
@@ -132,10 +144,12 @@ public class cartPage extends JFrame{
         txtQuantity2.setBounds(700, 90, 50, 20);
         txtQuantity2.setEditable(false);
         txtQuantity2.setBorder(null);
+        txtQuantity2.setBackground(null);
         
         JCheckBox checkBox2 = new JCheckBox();
         checkBox2.setSize(20, 20);
         checkBox2.setBounds(50, 80,20, 20);
+        checkBox2.setBackground(null);
         
         JLabel lblPicture2 = new JLabel();
         lblPicture2.setBounds(150, 30, 130, 130);
@@ -158,7 +172,7 @@ public class cartPage extends JFrame{
         pnlproduct.add(lblPicture);
         pnlproduct.setSize(900, 200);
         pnlproduct.setBounds(0, 70, 900, 200);
-        //pnlproduct.setBackground(Color.red);
+        pnlproduct.setBackground(Color.pink);
         
         
         
@@ -176,7 +190,7 @@ public class cartPage extends JFrame{
         pnlproduct2.add(lblPicture2);
         pnlproduct2.setSize(900, 200);
         pnlproduct2.setBounds(0, 270, 900, 200);
-        //pnlproduct2.setBackground(Color.red);
+        pnlproduct2.setBackground(Color.pink);
         
         
     }
