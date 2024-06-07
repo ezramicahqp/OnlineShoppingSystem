@@ -72,9 +72,9 @@ public class homePage extends JFrame{
        
        //FOR TEST (CLICKABLE LOGO)
        JButton btnLogo = new JButton();
-       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(120, 100, Image.SCALE_DEFAULT));
+       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
        btnLogo.setIcon(logo);
-       btnLogo.setBounds(0, 0, 120, 100); 
+       btnLogo.setBounds(30, 20, 80, 60); 
        btnLogo.setBorder(null);
        //
        
@@ -123,7 +123,7 @@ public class homePage extends JFrame{
        panel.add(btnLogo);
        
        
-       panel1.setBackground(new Color(244, 205, 241));
+       panel1.setBackground(Color.pink);
        panel1.setBounds( 0 ,100,300,250);
        panel1.add(price1);
        panel1.add(btnPic1);

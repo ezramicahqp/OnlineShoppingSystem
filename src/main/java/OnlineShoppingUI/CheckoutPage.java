@@ -1,6 +1,6 @@
 package OnlineShoppingUI;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -18,6 +18,7 @@ public class CheckoutPage extends JFrame{
         JPanel pnldelivery = new JPanel();
         JPanel pnlpayment = new JPanel();
         JPanel pnlplaceOrder = new JPanel();
+        
        //FRAME 
         JFrame frame = new JFrame();
         frame.setSize(900, 700);
@@ -35,13 +36,20 @@ public class CheckoutPage extends JFrame{
        
         //LABEL OF MAIN PANEL
         JLabel label = new JLabel("Checkout");
-        label.setBounds(50, 20, 150, 25);
+        label.setBounds(130, 20, 150, 25);
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
-            
+        label.setForeground(Color.WHITE);
+        JButton btnLogo = new JButton();
+        ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(70, 55, Image.SCALE_DEFAULT));
+        btnLogo.setIcon(logo);
+        btnLogo.setBounds(30, 5, 70, 55); 
+        btnLogo.setBorder(null);
+        
         //MAIN PANEL
-        panel.add(label);        
+        panel.add(label);
+        panel.add(btnLogo);        
         panel.setSize(900, 65);
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.black);
         panel.setBounds(0, 0, 900, 65);
         
         
@@ -55,6 +63,7 @@ public class CheckoutPage extends JFrame{
         txtColor.setBounds(340, 60, 50, 20);
         txtColor.setEditable(false);
         txtColor.setBorder(null);
+        txtColor.setBackground(null);
         
         JLabel lblProductSize = new JLabel("size:");
         lblProductSize.setBounds(400, 60, 500, 20);
@@ -62,6 +71,7 @@ public class CheckoutPage extends JFrame{
         txtSize.setBounds(440, 60, 50, 20);
         txtSize.setEditable(false);
         txtSize.setBorder(null);
+        txtSize.setBackground(null);
         
         JLabel lblProductQuantity = new JLabel("quantity:");
         lblProductQuantity.setBounds(500, 60, 500, 20);
@@ -69,6 +79,7 @@ public class CheckoutPage extends JFrame{
         txtQuantity.setBounds(550, 60, 50, 20);
         txtQuantity.setEditable(false);
         txtQuantity.setBorder(null);
+        txtQuantity.setBackground(null);
         
         JLabel lblProductPrice = new JLabel("price:");
         lblProductPrice.setBounds(300, 110, 500, 20);
@@ -76,6 +87,7 @@ public class CheckoutPage extends JFrame{
         txtPrice.setBounds(340, 110, 50, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
+        txtPrice.setBackground(null);
         
         JLabel lblPicture = new JLabel();
         lblPicture.setBounds(100, 15, 130, 130);
@@ -95,7 +107,7 @@ public class CheckoutPage extends JFrame{
         pnlproduct.add(lblPicture);
         pnlproduct.setSize(900, 160);
         pnlproduct.setBounds(0, 70, 900, 160);
-        //pnlproduct.setBackground(Color.red);
+        pnlproduct.setBackground(Color.pink);
         
         //Customer info
         JTextField txtcustomerName = new JTextField();
@@ -103,18 +115,21 @@ public class CheckoutPage extends JFrame{
         txtcustomerName.setBounds(50, 25, 450, 20);
         txtcustomerName.setEditable(false);
         txtcustomerName.setBorder(null);
+        txtcustomerName.setBackground(null);
         
         JTextField txtcustomerNumber = new JTextField();
         txtcustomerNumber.setText("contact number");
         txtcustomerNumber.setBounds(500, 25, 200, 20);
         txtcustomerNumber.setEditable(false);
         txtcustomerNumber.setBorder(null);
+        txtcustomerNumber.setBackground(null);
         
         JTextField txtcustomerAddress = new JTextField();
         txtcustomerAddress.setText("customer address");
         txtcustomerAddress.setBounds(50, 55, 650, 20);
         txtcustomerAddress.setEditable(false);
         txtcustomerAddress.setBorder(null);
+        txtcustomerAddress.setBackground(null);
         
         
         //Panel of Customer info
@@ -122,8 +137,8 @@ public class CheckoutPage extends JFrame{
         pnlcustomer.add(txtcustomerNumber);
         pnlcustomer.add(txtcustomerAddress);
         pnlcustomer.setSize(900, 100);
-        pnlcustomer.setBounds(0, 230, 900, 100);
-        //pnlcustomer.setBackground(Color.red);
+        pnlcustomer.setBounds(0, 235, 900, 100);
+        pnlcustomer.setBackground(Color.pink);
 
         //Delivery date details
         JLabel lbldeliveryDate = new JLabel("Delivery Date:");
@@ -132,6 +147,7 @@ public class CheckoutPage extends JFrame{
         txtdeliveryDate.setBounds(50, 50, 300, 20);
         txtdeliveryDate.setEditable(false);
         txtdeliveryDate.setBorder(null);
+        txtdeliveryDate.setBackground(null);
         
         JLabel lblshippingFee = new JLabel("Shipping Fee:");
         lblshippingFee.setBounds(500, 20, 100, 20);
@@ -139,6 +155,7 @@ public class CheckoutPage extends JFrame{
         txtshippingFee.setBounds(500, 50, 100, 20);
         txtshippingFee.setEditable(false);
         txtshippingFee.setBorder(null);
+        txtshippingFee.setBackground(null);
         
         
         //Panel of Deliver details
@@ -147,8 +164,8 @@ public class CheckoutPage extends JFrame{
         pnldelivery.add(lblshippingFee);
         pnldelivery.add(txtshippingFee);
         pnldelivery.setSize(900, 100);
-        pnldelivery.setBounds(0, 335, 900, 100);
-        //pnldelivery.setBackground(Color.red);
+        pnldelivery.setBounds(0, 340, 900, 100);
+        pnldelivery.setBackground(Color.pink);
         
         //payment method
         JLabel lblpaymentMethod = new JLabel("Payment Method");
@@ -156,10 +173,13 @@ public class CheckoutPage extends JFrame{
         
         JRadioButton btnGCash = new JRadioButton("GCash");
         btnGCash.setBounds(50, 50, 100, 20);
+        btnGCash.setBackground(null);
         JRadioButton btnCard = new JRadioButton("Credit/Debit Card");
         btnCard.setBounds(300, 50, 150, 20);
+        btnCard.setBackground(null);
         JRadioButton btnCOD = new JRadioButton("Cash on Delivery");
         btnCOD.setBounds(550, 50, 150, 20);
+        btnCOD.setBackground(null);
         
         ButtonGroup paymentMethods = new ButtonGroup();
         paymentMethods.add(btnCOD);
@@ -172,8 +192,8 @@ public class CheckoutPage extends JFrame{
         pnlpayment.add(btnCard);
         pnlpayment.add(btnCOD);
         pnlpayment.setSize(900, 100);
-        pnlpayment.setBounds(0, 440, 900, 100);
-        //pnlpayment.setBackground(Color.red);
+        pnlpayment.setBounds(0, 445, 900, 100);
+        pnlpayment.setBackground(Color.pink);
         
         
         //Place order
@@ -185,15 +205,16 @@ public class CheckoutPage extends JFrame{
         txtTotal.setBounds(585, 25, 100, 20);
         txtTotal.setEditable(false);
         txtTotal.setBorder(null);
+        txtTotal.setBackground(null);
         
         //panel of place order
         pnlplaceOrder.add(btnplaceOrder);
         pnlplaceOrder.add(lblTotal);
         pnlplaceOrder.add(txtTotal);
         pnlplaceOrder.setSize(900, 70);
-        //pnlplaceOrder.setBackground(Color.red);
+        pnlplaceOrder.setBackground(Color.white);
         pnlplaceOrder.setBounds(0, 590, 900, 70);
-        //pnlplaceOrder.setBorder(BorderFactory.createLineBorder(Color.black));
+        
         
         
     }
