@@ -27,8 +27,8 @@ public class cartPage extends JFrame{
 
         
         //BUTTONS OF MAIN PANEL
-        //JButton btnView = new JButton("View");
-        //btnView.setBounds(550, 20, 70, 25);
+        JButton btnView = new JButton("View");
+        btnView.setBounds(550, 20, 70, 25);
        
         
         JButton btnDelete = new JButton("Delete");
@@ -53,7 +53,7 @@ public class cartPage extends JFrame{
         
         //MAIN PANEL
         panel.add(label);        
-        //panel.add(btnView);
+        panel.add(btnView);
         panel.add(btnDelete);
         panel.add(btnCheckout);
         panel.setSize(900, 65);
