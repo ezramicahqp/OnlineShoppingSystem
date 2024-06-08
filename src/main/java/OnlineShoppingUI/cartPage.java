@@ -27,8 +27,9 @@ public class cartPage extends JFrame{
 
         
         //BUTTONS OF MAIN PANEL
-        JButton btnView = new JButton("View");
-        btnView.setBounds(550, 20, 70, 25);
+        //JButton btnView = new JButton("View");
+        //btnView.setBounds(550, 20, 70, 25);
+       
         
         JButton btnDelete = new JButton("Delete");
         btnDelete.setBounds(650, 20, 70, 25);
@@ -43,24 +44,23 @@ public class cartPage extends JFrame{
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
         label.setForeground(Color.WHITE);
         
-        //FOR TEST (CLICKABLE LOGO)
-       JButton btnLogo = new JButton();
-       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(70, 55, Image.SCALE_DEFAULT));
-       btnLogo.setIcon(logo);
-       btnLogo.setBounds(30, 5, 70, 55); 
-       btnLogo.setBorder(null);
-       //
+        JButton btnLogo = new JButton();
+        ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(90, 70, Image.SCALE_DEFAULT));
+        btnLogo.setIcon(logo);
+        btnLogo.setBounds(30, 0, 90, 70); 
+        btnLogo.setBorder(null);
 
         
         //MAIN PANEL
         panel.add(label);        
-        panel.add(btnView);
+        //panel.add(btnView);
         panel.add(btnDelete);
         panel.add(btnCheckout);
         panel.setSize(900, 65);
-        panel.setBackground(Color.black);
+        panel.setBackground(new Color(155, 114, 221));
         panel.setBounds(0, 0, 900, 65);
         panel.add(btnLogo);
+        
         
         
         // PRODUCT  1
@@ -180,7 +180,7 @@ public class cartPage extends JFrame{
         pnlproduct.add(btnPicture);
         pnlproduct.setSize(900, 200);
         pnlproduct.setBounds(0, 70, 900, 200);
-        pnlproduct.setBackground(Color.pink);
+        pnlproduct.setBackground(new Color(244, 205, 241));
         
         
         
@@ -197,7 +197,7 @@ public class cartPage extends JFrame{
         pnlproduct2.add(btnPicture2);
         pnlproduct2.setSize(900, 200);
         pnlproduct2.setBounds(0, 270, 900, 200);
-        pnlproduct2.setBackground(Color.pink);
+        pnlproduct2.setBackground(new Color(244, 205, 241));
         
         
     }
