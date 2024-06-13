@@ -11,7 +11,7 @@ public class ProductViewMain {
     
     public static void main(String[] args) {
         Productview pv = new Productview();
-                pv.setVisible(true);
+           
     } 
     
 }
