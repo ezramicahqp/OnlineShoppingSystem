@@ -4,10 +4,12 @@ package OnlineShoppingUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class CheckoutPage extends JFrame{
+public class CheckoutPage extends JFrame implements ActionListener{
     
     public CheckoutPage(){
         
@@ -26,6 +28,7 @@ public class CheckoutPage extends JFrame{
         frame.setTitle("shOOPe");
         frame.setVisible(true);
         frame.setLayout(null);
+        frame.setLocationRelativeTo(null);
         frame.add(panel);
         frame.add(pnlproduct);
         frame.add(pnlcustomer);
@@ -44,6 +47,7 @@ public class CheckoutPage extends JFrame{
         btnLogo.setIcon(logo);
         btnLogo.setBounds(30, 0, 90, 70); 
         btnLogo.setBorder(null);
+        btnLogo.addActionListener(this);
         
         //MAIN PANEL
         panel.add(label);
@@ -226,6 +230,16 @@ public class CheckoutPage extends JFrame{
     public static void main(String[] args){
         new CheckoutPage();
         
+        
+        
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        dispose();
+        homePage homepage = new homePage();
+        homepage.setVisible(true);
         
         
         

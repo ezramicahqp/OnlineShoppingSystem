@@ -273,6 +273,7 @@ public class homePage extends JFrame{
        panel.add(label);
     // panel.add(label2);
        panel.add(btnLogo);
+      
        
        
        panel1.setBackground(new Color(244, 205, 241));
@@ -283,6 +284,7 @@ public class homePage extends JFrame{
        panel1.add(txtprice);
        panel1.add(producttxt1);
        panel1.add(btnAddToCart1);
+       
        
        panel2.setBackground(new Color(244, 205, 241));
        panel2.setBounds( 300 ,100,300,250);
