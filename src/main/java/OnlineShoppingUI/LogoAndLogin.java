@@ -23,10 +23,11 @@ public class LogoAndLogin extends JFrame{
         dialog.setLayout(new FlowLayout());
         dialog.setSize(600, 600);
         
+        
        JButton btnLogo = new JButton();
-       ImageIcon logo = new ImageIcon(new ImageIcon("logopic.jpg").getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT));
+       ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(250, 200, Image.SCALE_DEFAULT));
        btnLogo.setIcon(logo);
-       btnLogo.setBounds(20, 10, 100, 80); 
+       btnLogo.setBounds(100, 500, 250, 200); 
        
        btnLogo.addActionListener(new ActionListener() {
             @Override
@@ -41,6 +42,7 @@ public class LogoAndLogin extends JFrame{
         dialog.add(new JLabel("Click button to continue"));
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
+       
         
     
      Label l1 = new Label("Email Address: ");
