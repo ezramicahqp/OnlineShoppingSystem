@@ -27,7 +27,7 @@ public class cartPage extends JFrame implements ActionListener{
     private final JLabel lblProductQuantity = new JLabel("quantity:");
     private final JTextField txtQuantity = new JTextField();
     private final JCheckBox checkBox = new JCheckBox();
-    
+    private  ImageIcon logo = new ImageIcon("shoopelogo.png");
     
     public cartPage(){
     
@@ -58,7 +58,10 @@ public class cartPage extends JFrame implements ActionListener{
         label.setForeground(Color.WHITE);
         panel.add(label);
         
-        ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(90, 70, Image.SCALE_DEFAULT));
+        //ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(90, 70, Image.SCALE_DEFAULT));
+        Image ShoopeLogo = logo.getImage();
+        Image shoopeLogo = ShoopeLogo.getScaledInstance(90, 70, Image.SCALE_DEFAULT);
+        logo = new ImageIcon(shoopeLogo);
         btnLogo.setIcon(logo);
         btnLogo.setBounds(30, 0, 90, 70); 
         btnLogo.setBorder(null);
@@ -70,9 +73,9 @@ public class cartPage extends JFrame implements ActionListener{
         btnCheckout.setBounds(750, 20, 90, 25);
         btnCheckout.addActionListener(this);
         panel.add(btnCheckout);
+        panel.setLayout(null);
         
-    }    
-       
+    }        
         
     public void PnlProduct(){
         
@@ -131,6 +134,7 @@ public class cartPage extends JFrame implements ActionListener{
         pnlproduct.setSize(900, 200);
         pnlproduct.setBounds(0, 70, 900, 200);
         pnlproduct.setBackground(new Color(244, 205, 241));
+        pnlproduct.setLayout(null);
         
     }    
 //        // PRODUCT  2

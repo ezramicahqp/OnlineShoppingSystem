@@ -30,8 +30,8 @@ public class LogoAndLogin extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Close the current window
-                LogoAndLogin1 loginPage = new LogoAndLogin1();
-                loginPage.setVisible(true); // Open the login page
+               // LogoAndLogin1 loginPage = new LogoAndLogin1();
+               // loginPage.setVisible(true); // Open the login page
             }
         });
 
