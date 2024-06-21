@@ -67,7 +67,7 @@ public class cartPage extends JFrame implements ActionListener{
         btnLogo.setBorder(null);
         panel.add(btnLogo);
         
-        btnDelete.setBounds(650, 20, 70, 25);
+        btnDelete.setBounds(650, 20, 80, 25);
         panel.add(btnDelete);
         
         btnCheckout.setBounds(750, 20, 90, 25);

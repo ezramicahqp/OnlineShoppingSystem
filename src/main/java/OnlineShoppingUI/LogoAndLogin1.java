@@ -8,7 +8,7 @@ import javax.swing.*;
 public class LogoAndLogin1 extends JFrame {
     
     public LogoAndLogin1() {
-        setTitle("Login Page");
+        setTitle("shOOPe");
         setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
@@ -16,9 +16,10 @@ public class LogoAndLogin1 extends JFrame {
         
         
         JPanel headerPanel = new JPanel();
-        headerPanel.setBounds(0, 0, 900, 100);
+        headerPanel.setBounds(0, 0, 900, 300);
         headerPanel.setLayout(null);
         add(headerPanel);
+        
         
         JPanel mainPanel = new JPanel();
         mainPanel.setBounds(0, 0, 895, 700);
@@ -29,10 +30,12 @@ public class LogoAndLogin1 extends JFrame {
         
         
         JLabel imageLabel = new JLabel();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon("panel.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("shoope_bg_pic.png").getImage().getScaledInstance(900, 300, Image.SCALE_DEFAULT));
         imageLabel.setIcon(imageIcon);
-        imageLabel.setBounds(345, 20, 900, 100);
+        imageLabel.setBounds(0, 0, 900, 300);
         headerPanel.add(imageLabel);
+        
+        
         
         Label l1 = new Label("Email Address: ");
         l1.setBounds(330, 360, 100, 30);
@@ -42,10 +45,18 @@ public class LogoAndLogin1 extends JFrame {
         l2.setBounds(330, 430, 100, 30);
         mainPanel.add(l2);
         
+        JPanel lblWelcomeShopper = new JPanel();
+        lblWelcomeShopper.setBounds(20, 200, 500, 100);
+        lblWelcomeShopper.setBackground(Color.pink);
+        lblWelcomeShopper.setLayout(null);
+        //headerPanel.add(lblWelcomeShopper);
+        add(lblWelcomeShopper);
+        
+        
         Label l3 = new Label("Welcome Shopper!");
-        l3.setBounds(40, 200, 600, 100);
+        //l3.setBounds(40, 200, 600, 100);
         l3.setFont(new Font("Times New Roman", Font.BOLD, 50));
-        mainPanel.add(l3);
+        lblWelcomeShopper.add(l3);
         
         Label l4 = new Label("Please Login to continue");
         l4.setBounds(330, 290, 300, 100);
