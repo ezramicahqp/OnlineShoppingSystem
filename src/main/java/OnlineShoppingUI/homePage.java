@@ -273,6 +273,7 @@ public class homePage extends JFrame{
        panel.add(label);
     // panel.add(label2);
        panel.add(btnLogo);
+       panel.setLayout(null);
       
        
        
@@ -284,6 +285,7 @@ public class homePage extends JFrame{
        panel1.add(txtprice);
        panel1.add(producttxt1);
        panel1.add(btnAddToCart1);
+       panel1.setLayout(null);
        
        
        panel2.setBackground(new Color(244, 205, 241));
@@ -294,6 +296,7 @@ public class homePage extends JFrame{
        panel2.add(txtprice1);
        panel2.add(producttxt2);
        panel2.add(btnAddToCart2);
+       panel2.setLayout(null);
        
        
        panel3.setBackground (new Color(244, 205, 241));
@@ -304,6 +307,7 @@ public class homePage extends JFrame{
        panel3.add(txtprice2);
        panel3.add(producttxt3);
        panel3.add(btnAddToCart3);
+       panel3.setLayout(null);
       
        
        panel4.setBackground(new Color(244, 205, 241));
@@ -314,6 +318,7 @@ public class homePage extends JFrame{
        panel4.add(txtprice3);
        panel4.add(producttxt4);
        panel4.add(btnAddToCart4);
+       panel4.setLayout(null);
        
        
        panel5.setBackground(new Color(244, 205, 241));
@@ -324,6 +329,7 @@ public class homePage extends JFrame{
        panel5.add(txtprice4);
        panel5.add(producttxt5);
        panel5.add(btnAddToCart5);
+       panel5.setLayout(null);
        
        
        
@@ -335,6 +341,7 @@ public class homePage extends JFrame{
        panel6.add(txtprice5);
        panel6.add(producttxt6);
        panel6.add(btnAddToCart6);
+       panel6.setLayout(null);
 
     }
     

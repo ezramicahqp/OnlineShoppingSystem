@@ -18,24 +18,15 @@ public class Productview extends JFrame{
         JFrame f = new JFrame();
         JPanel panel = new JPanel();
         JPanel panel2 = new JPanel();
-        JPanel panel3 = new JPanel();
-        JPanel panel4 = new JPanel();
-        JPanel panel5 = new JPanel();
-        JPanel panel6 = new JPanel();
-        JPanel panel7 = new JPanel();
-      
-      
+
+    
         f.setTitle("Product View");
         f.setSize(900, 700);
         f.setLayout(null);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(panel);
         f.add(panel2);
-        f.add(panel3);
-        f.add(panel4);
-        f.add(panel5);
-        f.add(panel6);
-        f.add(panel7);
+
          
         f.setVisible(true);
         
@@ -45,25 +36,37 @@ public class Productview extends JFrame{
         btncart.setIcon(cart);
         btncart.setBackground(null);
         btncart.setBorder(null);
+       
         
         JButton btncategory = new JButton("Category");
         btncategory.setBounds(680,30,90,30);
         btncategory.setFont(new Font("Roboto",Font.BOLD, 12));
         
+        
         JButton btncolor = new JButton("Color");
-        btncolor.setBounds(600,170,100,40);
+        btncolor.setBounds(500,180,100,40);
+        panel2.add(btncolor);
        
         JButton btnsize = new JButton("Size");
-        btnsize.setBounds(750,170,100,40);
+        btnsize.setBounds(700,180,100,40);
+        panel2.add(btnsize);
      
         JButton btnadd = new JButton("Add to Cart");
-        btnadd.setBounds(600,250,100,40);
+        btnadd.setBounds(500,250,100,40);
+        panel2.add(btnadd);
      
         JButton btnquantity = new JButton("Quantity");
-        btnquantity.setBounds(750,250,100,40);
+        btnquantity.setBounds(700,250,100,40);
+        panel2.add(btnquantity);
     
-        JTextField name = new JTextField("Product name");
-        name.setBounds(690,70,100,100);
+        JTextField name = new JTextField();
+        name.setText("Street Weaving Spider T-shirt");
+        name.setFont(new Font("Roboto", Font.BOLD, 16));
+        name.setEditable(false);
+        name.setBorder(null);
+        name.setBackground(null);
+        name.setBounds(500,90,300,50);
+        panel2.add(name);
     
         JButton btnLogo = new JButton();
         ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
@@ -71,48 +74,36 @@ public class Productview extends JFrame{
         btnLogo.setBounds(20, 10, 100, 80); 
         btnLogo.setBorder(null);
         
+        
        JButton btnPic3 = new JButton();
-       btnPic3.setBounds(175,40,135,150);
-       ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
+       btnPic3.setBounds(100,70,320,360);
+       ImageIcon icon3 = new ImageIcon (new ImageIcon("spider_tshirt.jpg").getImage().getScaledInstance(320,360, Image.SCALE_DEFAULT));
        btnPic3.setIcon(icon3);
        btnPic3.setBorder(null);
-
-        
-        f.add(btncart);
-        f.add(btncategory);
-        f.add(btncolor);
-        f.add(btnsize);
-        f.add(btnadd);
-        f.add(btnquantity);
-        f.add(name);
-        
-        
+       
+        JTextField txtDescription = new JTextField();
+        txtDescription.setText("Description");
+        txtDescription.setEditable(false);
+        txtDescription.setBorder(null);
+        txtDescription.setBackground(null);
+        txtDescription.setBounds(500,300,400,250);
+        panel2.add(txtDescription);
+     
         
         panel.setBackground(new Color(155, 114, 221));
         panel.setBounds( 0,0,900,100);
         panel.add(btncart);
         panel.add(btncategory);
         panel.add(btnLogo);
+        panel.setLayout(null);
        
         
         panel2.setBackground(new Color(244, 205, 241));
-        panel2.setBounds( 0 ,100,300,250);
+        panel2.setBounds( 0 ,100,900,600);
         panel2.add(btnPic3);
+        panel2.setLayout(null);
         
-        panel3.setBackground(new Color(244, 205, 241));
-        panel3.setBounds( 300 ,100,300,250);
-        
-        panel4.setBackground(new Color(244, 205, 241));
-        panel4.setBounds( 600,100,300,250);
-        
-        panel5.setBackground(new Color(244, 205, 241));
-        panel5.setBounds( 0,350,300,350);
-        
-        panel6.setBackground(new Color(244, 205, 241));
-        panel6.setBounds( 300,350,300,350);
-        
-        panel7.setBackground(new Color(244, 205, 241));
-        panel7.setBounds( 600,350,300,350);
+
     }
 
  
