@@ -14,71 +14,88 @@ public class LogoAndLogin1 extends JFrame {
         setLayout(null);
         setResizable(false);
         
+        JPanel pnlShoopeLogo = new JPanel();
+        //pnlShoopeLogo.setBounds(220, 0, 350, 230);
+        pnlShoopeLogo.setBounds(0, 0, 900, 700);
+        pnlShoopeLogo.setLayout(null);
+        pnlShoopeLogo.setBackground(new Color(255, 255, 255,180));
+        add(pnlShoopeLogo);
         
-        JPanel headerPanel = new JPanel();
-        headerPanel.setBounds(0, 0, 900, 300);
-        headerPanel.setLayout(null);
-        add(headerPanel);
         
+        JPanel pnlWelcomeBanner = new JPanel();
+        pnlWelcomeBanner.setBounds(50, 230, 350, 50);
+        pnlWelcomeBanner.setLayout(null);
+        pnlWelcomeBanner.setBackground(new Color(255, 255, 255,0));
+        pnlShoopeLogo.add(pnlWelcomeBanner);
+        
+  
+        JPanel pnlMainPanelLining = new JPanel();
+        pnlMainPanelLining.setBounds(250, 290, 400, 320);
+        pnlMainPanelLining.setLayout(null);
+        pnlMainPanelLining.setBackground(new Color(155, 114, 221,120));
+        pnlShoopeLogo.add(pnlMainPanelLining);
         
         JPanel mainPanel = new JPanel();
-        mainPanel.setBounds(0, 0, 895, 700);
-        mainPanel.setBackground(Color.pink);
+        //mainPanel.setBounds(260, 300, 380, 300);
+        mainPanel.setBounds(10, 10, 380, 300);
+        mainPanel.setBackground(new Color(244, 205, 241));
         mainPanel.setLayout(null);
-        add(mainPanel);
-        
+        pnlMainPanelLining.add(mainPanel);
+       
         
         
         JLabel imageLabel = new JLabel();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon("shoope_bg_pic.png").getImage().getScaledInstance(900, 300, Image.SCALE_DEFAULT));
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("shoope_bg_pic.png").getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT));
         imageLabel.setIcon(imageIcon);
-        imageLabel.setBounds(0, 0, 900, 300);
-        headerPanel.add(imageLabel);
+        imageLabel.setBounds(0, 0, 900, 700);
+        //headerPanel.add(imageLabel);
+        add(imageLabel);
         
         
+        Label lblEmailAdd = new Label("Email Address: ");
+        lblEmailAdd.setBounds(35, 60, 100, 30);
+        mainPanel.add(lblEmailAdd);
         
-        Label l1 = new Label("Email Address: ");
-        l1.setBounds(330, 360, 100, 30);
-        mainPanel.add(l1);
+        Label lblPassword = new Label("Password:");
+        lblPassword.setBounds(35, 130, 100, 30);
+        mainPanel.add(lblPassword);
         
-        Label l2 = new Label("Password:");
-        l2.setBounds(330, 430, 100, 30);
-        mainPanel.add(l2);
+       
+        JLabel hdrWelcome = new JLabel("Welcome Shopper!" );
+        hdrWelcome.setBounds(25, 0, 350, 50);
+        hdrWelcome.setFont(new Font("Times New Roman", Font.ITALIC, 35));
+        hdrWelcome.setOpaque(false);
+        pnlWelcomeBanner.add(hdrWelcome);
         
-        JPanel lblWelcomeShopper = new JPanel();
-        lblWelcomeShopper.setBounds(20, 200, 500, 100);
-        lblWelcomeShopper.setBackground(Color.pink);
-        lblWelcomeShopper.setLayout(null);
-        //headerPanel.add(lblWelcomeShopper);
-        add(lblWelcomeShopper);
+        JLabel hdrShoopeLogo = new JLabel();
+        ImageIcon icon = new ImageIcon(new ImageIcon("shOOPe.png").getImage().getScaledInstance(370, 250, Image.SCALE_DEFAULT));
+        hdrShoopeLogo.setBounds(250, 0, 370, 250);
+        hdrShoopeLogo.setIcon(icon);
+        pnlShoopeLogo.add(hdrShoopeLogo);
         
-        
-        Label l3 = new Label("Welcome Shopper!");
-        //l3.setBounds(40, 200, 600, 100);
-        l3.setFont(new Font("Times New Roman", Font.BOLD, 50));
-        lblWelcomeShopper.add(l3);
+
         
         Label l4 = new Label("Please Login to continue");
-        l4.setBounds(330, 290, 300, 100);
+        l4.setBounds(20, 10, 300, 30);
         l4.setFont(new Font("Times New Roman", Font.ITALIC, 15));
         mainPanel.add(l4);
         
-        TextField t1 = new TextField();
-        t1.setBounds(330, 390, 300, 30);
-        mainPanel.add(t1);
+        TextField txtEmailAdd = new TextField();
+        txtEmailAdd.setBounds(35, 90, 300, 30);
+        mainPanel.add(txtEmailAdd);
         
-        TextField t3 = new TextField();
-        t3.setBounds(330, 460, 300, 30);
-        mainPanel.add(t3);
+        TextField txtPassword = new TextField();
+        txtPassword.setBounds(35, 160, 300, 30);
+        mainPanel.add(txtPassword);
         
         Button a = new Button("Login");
-        a.setBounds(330, 500, 100, 30);
+        a.setBounds(35, 250, 100, 30);
         mainPanel.add(a);
         
         a.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String Username = t1.getText();
-                String Password = t3.getText();
+                String Username = txtEmailAdd.getText();
+                String Password = txtPassword.getText();
                 
                 if (Username.equals("Ed Dela Cruz") && Password.equals("OOP")) {
                     JOptionPane.showMessageDialog(null, "Successfully Logged In!", "Login Success", JOptionPane.INFORMATION_MESSAGE);
@@ -88,4 +105,6 @@ public class LogoAndLogin1 extends JFrame {
             }
         });
     }
+
+   
 }
