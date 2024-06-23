@@ -13,7 +13,8 @@ import javax.swing.*;
 
 
 public class Productview extends JFrame{
-   
+   private static final String[]Color={"YELLOW","BLUE","RED"};
+   private static final String[]Sizes={"SMALL","MEDIUM","LARGE"};
     Productview(){
         JFrame f = new JFrame();
         JPanel panel = new JPanel();
@@ -43,13 +44,18 @@ public class Productview extends JFrame{
         btncategory.setFont(new Font("Roboto",Font.BOLD, 12));
         
         
-        JButton btncolor = new JButton("Color");
-        btncolor.setBounds(500,180,100,40);
-        panel2.add(btncolor);
+ 
+        JComboBox <String>cmbcolor;
+        cmbcolor = new JComboBox<>(Color);
+        cmbcolor.setBounds(500,180,100,40);
+        panel2.add(cmbcolor);
        
-        JButton btnsize = new JButton("Size");
-        btnsize.setBounds(700,180,100,40);
-        panel2.add(btnsize);
+        JComboBox <String>cmbsize;
+        cmbsize = new JComboBox<>(Sizes);
+        cmbsize.setBounds(700,180,100,40);
+        panel2.add(cmbsize);
+
+ 
      
         JButton btnadd = new JButton("Add to Cart");
         btnadd.setBounds(500,250,100,40);
