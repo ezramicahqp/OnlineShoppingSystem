@@ -44,6 +44,7 @@ public class Productview extends JFrame{
         btncategory.setFont(new Font("Roboto",Font.BOLD, 12));
         
         
+ 
         JComboBox <String>cmbcolor;
         cmbcolor = new JComboBox<>(Color);
         cmbcolor.setBounds(500,180,100,40);
@@ -53,6 +54,8 @@ public class Productview extends JFrame{
         cmbsize = new JComboBox<>(Sizes);
         cmbsize.setBounds(700,180,100,40);
         panel2.add(cmbsize);
+
+ 
      
         JButton btnadd = new JButton("Add to Cart");
         btnadd.setBounds(500,250,100,40);
