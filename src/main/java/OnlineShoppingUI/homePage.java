@@ -322,7 +322,7 @@ public class homePage extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         cartPage cart = new cartPage();
         Productview product = new Productview();
-        LogoAndLogin1 logo = new LogoAndLogin1();
+        homePage logo = new homePage();
         dispose();
         
         
@@ -385,7 +385,7 @@ public class homePage extends JFrame implements ActionListener{
         
         else if (e.getSource()==btnLogo){
         logo.setVisible(true);
-        new LogoAndLogin1();
+        new homePage();
         }
     }
 } 
