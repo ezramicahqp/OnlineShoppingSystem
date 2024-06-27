@@ -25,6 +25,7 @@ public class Productview extends JFrame{
         f.setSize(900, 700);
         f.setLayout(null);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);
         f.add(panel);
         f.add(panel2);
 
