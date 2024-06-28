@@ -1,7 +1,6 @@
 package OnlineShoppingUI;
 import javax.swing.*;
 import java.awt.*;
- CarlosBote
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -15,6 +14,7 @@ public class homePage extends JFrame implements ActionListener{
         private final JFrame tonsay = new JFrame();
         
         private final JPanel panel = new JPanel();
+        private final JPanel productsMain = new JPanel();
         private final JPanel panel1 = new JPanel(); 
         private final JPanel panel2 = new JPanel();
         private final JPanel panel3 = new JPanel(); 
@@ -66,17 +66,18 @@ public class homePage extends JFrame implements ActionListener{
         tonsay.setLocationRelativeTo(null);
         tonsay.setLayout(null);
         tonsay.add(panel); 
-        tonsay.add(panel1); 
-        tonsay.add(panel2); 
-        tonsay.add(panel3); 
-        tonsay.add(panel4); 
-        tonsay.add(panel5); 
-        tonsay.add(panel6); 
-       
+        tonsay.add(productsMain); 
+        
         tonsay.setVisible(true);
         
             menu();
-            products();    
+            products();
+            products1();
+            products2();
+            products3();
+            products4();
+            products5();
+            products6();
         }
     
     public void menu(){
@@ -102,20 +103,37 @@ public class homePage extends JFrame implements ActionListener{
        btnLogo.setIcon(logo);
        btnLogo.setBounds(20, 10, 100, 80); 
        btnLogo.addActionListener(this);
-       //btnLogo.setBorder(null); 
+       btnLogo.setBorder(null); 
        panel.add(btnLogo);
+
+        panel.setBackground(new Color(155, 114, 221));
+        panel.setBounds( 0,0,900,100);
+        panel.setLayout(null);
+        // panel.add(label2);
            
     }
 
-    public void products(){    
+    public void products(){ 
+         productsMain.setBackground(new Color(244, 205, 241));
+         productsMain.setBounds( 0 ,100,900,600);
+         productsMain.setLayout(null);
+
+        productsMain.add(panel1); 
+        productsMain.add(panel2); 
+        productsMain.add(panel3); 
+        productsMain.add(panel4); 
+        productsMain.add(panel5); 
+        productsMain.add(panel6); 
+    }
+
+    public void products1(){
     // product1
         txtprice.setText("Php 300");
         txtprice.setBounds(50, 220, 100, 20);
         txtprice.setEditable(false);
         txtprice.setBorder(null);
         txtprice.setBackground(null);
-        
-        
+      
         producttxt1.setText("Black Shirt");
         //producttxt1.setFont(new Font ("Roboto", Font.BOLD, 13));
         producttxt1.setBounds(50,200,150,20);
@@ -123,16 +141,41 @@ public class homePage extends JFrame implements ActionListener{
         producttxt1.setBorder(null);
         producttxt1.setBackground(null);
         
-        
         btnPic1.setBounds(90, 40, 133, 150);
         btnPic1.addActionListener(this);
         ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
         btnPic1.setIcon(icon1);
-        //btnPic1.setBorder(null);
+        btnPic1.setBorder(null);
        
         btnAddToCart1.setBounds(150, 220, 100, 20);
         btnAddToCart1.addActionListener(this);
-        
+
+            panel1.setBackground(new Color(244, 205, 241));
+            panel1.setBounds( 0 ,0,300,250);
+            panel1.add(btnPic1);
+            panel1.add(txtprice);
+            panel1.add(producttxt1);
+            panel1.add(btnAddToCart1);
+            panel1.setLayout(null);
+                //panel1.add(price1);
+                //panel1.add(pricelbl);
+                
+        //FIRST ADD TO CART
+       JButton btnAddToCart1 = new JButton("Add to Cart");
+        btnAddToCart1.setBounds(150, 220, 100, 20);
+        btnAddToCart1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cartPageTwo cp2 = new cartPageTwo();
+                cp2.show();
+                tonsay.dispose();
+            } 
+        });
+
+
+} 
+
+    public void products2(){
     //product2
         txtprice1.setText("Php 300");
         txtprice1.setBounds(50, 220, 100, 20);
@@ -151,10 +194,24 @@ public class homePage extends JFrame implements ActionListener{
         btnPic2.addActionListener(this);
         ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
         btnPic2.setIcon(icon2);
-        //btnPic2.setBorder(null);
+        btnPic2.setBorder(null);
        
         btnAddToCart2.setBounds(150, 220, 100, 20);
         btnAddToCart2.addActionListener(this);
+
+            panel2.setBackground(new Color(244, 205, 241));
+            panel2.setBounds( 300 ,0,300,250);
+            panel2.add(btnPic2);
+            panel2.add(txtprice1);
+            panel2.add(producttxt2);
+            panel2.add(btnAddToCart2);
+            panel2.setLayout(null);
+                //panel2.add(price2);
+                //panel2.add( pricelbl1);
+        
+    }
+
+    public void products3(){
     //product3
         txtprice2.setText("Php 300");
         txtprice2.setBounds(50, 220, 100, 20);
@@ -174,11 +231,23 @@ public class homePage extends JFrame implements ActionListener{
         ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
         btnPic3.setIcon(icon3);
         btnPic3.addActionListener(this);
-        //btnPic3.setBorder(null);
+        btnPic3.setBorder(null);
        
         btnAddToCart3.setBounds(150, 220, 100, 20);
         btnAddToCart3.addActionListener(this);
 
+            panel3.setBackground (new Color(244, 205, 241));
+            panel3.setBounds( 600,0,300,250);
+            panel3.add(btnPic3);
+            panel3.add(txtprice2);
+            panel3.add(producttxt3);
+            panel3.add(btnAddToCart3);
+            panel3.setLayout(null);
+                //panel3.add(price3);
+                //panel3.add( pricelbl2); 
+}
+
+    public void products4(){
     //product 4
         txtprice3.setText("Php 300");
         txtprice3.setBounds(50, 220, 100, 20);
@@ -198,10 +267,23 @@ public class homePage extends JFrame implements ActionListener{
         btnPic4.addActionListener(this);
         ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
         btnPic4.setIcon(icon4);
-        //btnPic4.setBorder(null);
+        btnPic4.setBorder(null);
 
         btnAddToCart4.setBounds(150, 220, 100, 20);
         btnAddToCart4.addActionListener(this);
+
+            panel4.setBackground(new Color(244, 205, 241));
+            panel4.setBounds( 0,250,300,350);
+            panel4.add(btnPic4);
+            panel4.add(txtprice3);
+            panel4.add(producttxt4);
+            panel4.add(btnAddToCart4);
+            panel4.setLayout(null);
+                //panel4.add(price4);
+                //panel4.add( pricelbl3);
+}
+
+    public void products5(){
     //product5
         txtprice4.setText("Php 300");
         txtprice4.setBounds(50, 220, 100, 20);
@@ -220,13 +302,25 @@ public class homePage extends JFrame implements ActionListener{
         btnPic5.addActionListener(this);
         ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
         btnPic5.setIcon(icon5);
-        //btnPic5.setBorder(null);
+        btnPic5.setBorder(null);
        
         btnAddToCart5.setBounds(150, 220, 100, 20);
         btnAddToCart5.addActionListener(this);
-        
-    //product6
-        
+
+            panel5.setBackground(new Color(244, 205, 241));
+            panel5.setBounds( 300,250,300,350);
+            panel5.add(btnPic5);
+            panel5.add(txtprice4);
+            panel5.add(producttxt5);
+            panel5.add(btnAddToCart5);
+            panel5.setLayout(null);
+                //panel5.add( pricelbl4);
+                //panel5.add(price5); 
+
+}   
+
+    public void products6(){
+    //product6       
         txtprice5.setText("Php 300");
         txtprice5.setBounds(50, 220, 100, 20);
         txtprice5.setEditable(false);
@@ -244,149 +338,13 @@ public class homePage extends JFrame implements ActionListener{
         ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
         btnPic6.addActionListener(this);
         btnPic6.setIcon(icon6);
-        //btnPic6.setBorder(null);
-       
- CarlosBote
-       //FOR TEST (CLICKABLE LOGO)
-       JButton btnLogo = new JButton();
-       ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
-       btnLogo.setIcon(logo);
-       btnLogo.setBounds(20, 10, 100, 80); 
-       btnLogo.setBorder(null);
-       
-       
-       
-       JButton btnPic1 = new JButton();
-       btnPic1.setBounds(90, 40, 133, 150);
-       ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
-       btnPic1.setIcon(icon1);
-       btnPic1.setBorder(null);
+        btnPic6.setBorder(null);
 
-       JButton btnPic2 = new JButton();
-       btnPic2.setBounds(95,40,113,150);
-       ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
-       btnPic2.setIcon(icon2);
-       btnPic2.setBorder(null);
-
-       JButton btnPic3 = new JButton();
-       btnPic3.setBounds(75,40,135,150);
-       ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
-       btnPic3.setIcon(icon3);
-       btnPic3.setBorder(null);
-
-       JButton btnPic4 = new JButton(); 
-       btnPic4.setBounds(55,90,180,100);
-       ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
-       btnPic4.setIcon(icon4);
-       btnPic4.setBorder(null);
-
-
-       JButton btnPic5 = new JButton();  
-       btnPic5.setBounds(100,40,100,150);
-       ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
-       btnPic5.setIcon(icon5);
-       btnPic5.setBorder(null);
-      
-
-       JButton btnPic6 = new JButton();  
-       btnPic6.setBounds(100,40,100,150);
-       ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
-       btnPic6.setIcon(icon6);
-       btnPic6.setBorder(null);
-
-   
-       //FIRST ADD TO CART
-       JButton btnAddToCart1 = new JButton("Add to Cart");
-        btnAddToCart1.setBounds(150, 220, 100, 20);
-        btnAddToCart1.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cartPageTwo cp2 = new cartPageTwo();
-                cp2.show();
-                tonsay.dispose();
-            } 
-        });
-    
-       
-       JButton btnAddToCart2 = new JButton("Add to Cart");
-        btnAddToCart2.setBounds(150, 220, 100, 20);
-       
-       JButton btnAddToCart3 = new JButton("Add to Cart");
-        btnAddToCart3.setBounds(150, 220, 100, 20);
-       
-       JButton btnAddToCart4 = new JButton("Add to Cart");
-        btnAddToCart4.setBounds(150, 220, 100, 20);
-       
-       JButton btnAddToCart5 = new JButton("Add to Cart");
-        btnAddToCart5.setBounds(150, 220, 100, 20);
-       
-       JButton btnAddToCart6 = new JButton("Add to Cart");
-=======
- master
         btnAddToCart6.setBounds(150, 220, 100, 20);
         btnAddToCart6.addActionListener(this);
        
-        //ScrollBar 
-        //JScrollPane scroll = JScrollPane (JScrollPane.HORIZONTAL_SCROLLBAR);
-        // tonsay.add(scroll);
-     //panels
-            panel.setBackground(new Color(155, 114, 221));
-            panel.setBounds( 0,0,900,100);
-            panel.setLayout(null);
-            // panel.add(label2);
-     
-            panel1.setBackground(new Color(244, 205, 241));
-            panel1.setBounds( 0 ,100,300,250);
-            panel1.add(btnPic1);
-            panel1.add(txtprice);
-            panel1.add(producttxt1);
-            panel1.add(btnAddToCart1);
-            panel1.setLayout(null);
-                //panel1.add(price1);
-                //panel1.add(pricelbl);
-       
-            panel2.setBackground(new Color(244, 205, 241));
-            panel2.setBounds( 300 ,100,300,250);
-            panel2.add(btnPic2);
-            panel2.add(txtprice1);
-            panel2.add(producttxt2);
-            panel2.add(btnAddToCart2);
-            panel2.setLayout(null);
-                //panel2.add(price2);
-                //panel2.add( pricelbl1);
-                
-            panel3.setBackground (new Color(244, 205, 241));
-            panel3.setBounds( 600,100,300,250);
-            panel3.add(btnPic3);
-            panel3.add(txtprice2);
-            panel3.add(producttxt3);
-            panel3.add(btnAddToCart3);
-            panel3.setLayout(null);
-                //panel3.add(price3);
-                //panel3.add( pricelbl2); 
-       
-            panel4.setBackground(new Color(244, 205, 241));
-            panel4.setBounds( 0,350,300,350);
-            panel4.add(btnPic4);
-            panel4.add(txtprice3);
-            panel4.add(producttxt4);
-            panel4.add(btnAddToCart4);
-            panel4.setLayout(null);
-                //panel4.add(price4);
-                //panel4.add( pricelbl3);
-                
-            panel5.setBackground(new Color(244, 205, 241));
-            panel5.setBounds( 300,350,300,350);
-            panel5.add(btnPic5);
-            panel5.add(txtprice4);
-            panel5.add(producttxt5);
-            panel5.add(btnAddToCart5);
-            panel5.setLayout(null);
-                //panel5.add( pricelbl4);
-                //panel5.add(price5); 
-                
             panel6.setBackground(new Color(244, 205, 241));
-            panel6.setBounds( 600,350,300,350);
+            panel6.setBounds( 600,250,300,350);
             panel6.add(btnPic6);
             panel6.add(txtprice5);
             panel6.add(producttxt6);
@@ -395,7 +353,14 @@ public class homePage extends JFrame implements ActionListener{
                 //panel6.add( pricelbl5);
                 //panel6.add(price6);
 
-            }
+}
+
+   
+        //ScrollBar 
+        //JScrollPane scroll = JScrollPane (JScrollPane.HORIZONTAL_SCROLLBAR);
+        // tonsay.add(scroll);
+     //panels
+   
     
     public static void main(String[] args) {
         new homePage();
@@ -414,30 +379,30 @@ public class homePage extends JFrame implements ActionListener{
         cart.setVisible(true);
         new cartPage();
         }
-        else if (e.getSource()==btnAddToCart1){
-        cart.setVisible(true);
-        new cartPage();
-        }
-        else if (e.getSource()==btnAddToCart2){
-        cart.setVisible(true);
-        new cartPage();
-        }
-        else if (e.getSource()==btnAddToCart3){
-        cart.setVisible(true);
-        new cartPage();
-        }
-        else if (e.getSource()==btnAddToCart4){
-        cart.setVisible(true);
-        new cartPage();
-        }
-        else if (e.getSource()==btnAddToCart5){
-        cart.setVisible(true);
-        new cartPage();
-        }
-        else if (e.getSource()==btnAddToCart6){
-        cart.setVisible(true);
-        new cartPage();
-        }
+//        else if (e.getSource()==btnAddToCart1){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
+//        else if (e.getSource()==btnAddToCart2){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
+//        else if (e.getSource()==btnAddToCart3){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
+//        else if (e.getSource()==btnAddToCart4){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
+//        else if (e.getSource()==btnAddToCart5){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
+//        else if (e.getSource()==btnAddToCart6){
+//        cart.setVisible(true);
+//        new cartPage();
+//        }
         else if (e.getSource()==btnPic1){
         product.setVisible(true);
         new Productview();
@@ -470,6 +435,6 @@ public class homePage extends JFrame implements ActionListener{
         else if (e.getSource()==btnLogo){
         logo.setVisible(true);
         new homePage();
-        }
+       }
     }
 } 
