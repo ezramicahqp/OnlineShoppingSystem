@@ -60,6 +60,7 @@ public class cartPageTwo extends JFrame{
         panel.setBackground(new Color(155, 114, 221));
         panel.setBounds(0, 0, 900, 65);
         panel.add(btnLogo);
+        panel.setLayout(null);
         
         
         
@@ -181,6 +182,7 @@ public class cartPageTwo extends JFrame{
         pnlproduct.setSize(900, 200);
         pnlproduct.setBounds(0, 70, 900, 200);
         pnlproduct.setBackground(new Color(244, 205, 241));
+        pnlproduct.setLayout(null);
         
         
         
