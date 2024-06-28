@@ -7,74 +7,101 @@ import javax.swing.*;
 
 public class LogoAndLogin1 extends JFrame {
     
+    private final JFrame frame = new JFrame();
+    
+    private final JPanel panel = new JPanel();
+    private final JPanel mainPanel = new JPanel();
+    
+    private final JLabel lblWelcome = new JLabel();
+    private final JLabel lblLogin = new JLabel();
+    private final JLabel lblEmail = new JLabel();
+    private final JLabel lblPassword = new JLabel();
+    
+    private final JTextField txtEmail = new JTextField();
+    private final JTextField txtPassword = new JTextField();
+    
+    private final JButton buttonLog = new JButton();
+    
     public LogoAndLogin1() {
-        setTitle("Login Page");
-        setSize(900, 700);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
-        setResizable(false);
         
+        Panel();
+        MainPanel();
         
-        JPanel headerPanel = new JPanel();
-        headerPanel.setBounds(0, 0, 900, 100);
-        headerPanel.setLayout(null);
-        add(headerPanel);
+        frame.setTitle("Login Here!");
+        frame.setSize(900,700);
+        frame.setVisible(true);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        JPanel mainPanel = new JPanel();
-        mainPanel.setBounds(0, 0, 895, 700);
-        mainPanel.setBackground(Color.pink);
+    }
+    
+    public void Panel() {
+        
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("panel.png").getImage().getScaledInstance(900, 200, Image.SCALE_DEFAULT));
+        JLabel label = new JLabel(imageIcon);
+        panel.add(label);
+        panel.setBounds(0, 0, 900, 200);
+        frame.add(panel);
+
+    }
+    
+    public void MainPanel() {
+        
+        mainPanel.setBackground(Color.PINK);
         mainPanel.setLayout(null);
         add(mainPanel);
         
         
+        lblWelcome.setText("Welcome Shopper!");
+        lblWelcome.setBounds(40, 200, 600, 100);
+        lblWelcome.setFont(new Font("Times New Roman", Font.BOLD, 50));
+        mainPanel.add(lblWelcome);
         
-        JLabel imageLabel = new JLabel();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon("panel.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-        imageLabel.setIcon(imageIcon);
-        imageLabel.setBounds(345, 20, 900, 100);
-        headerPanel.add(imageLabel);
+        lblLogin.setText("Please Login To Continue");
+        lblLogin.setBounds(330, 290, 300, 100);
+        lblLogin.setFont(new Font("Times New Roman", Font.ITALIC, 15));
+        mainPanel.add(lblLogin);
         
-        Label l1 = new Label("Email Address: ");
-        l1.setBounds(330, 360, 100, 30);
-        mainPanel.add(l1);
+        lblEmail.setText("Email Address:");
+        lblEmail.setBounds(330, 360, 100, 30);
+        lblEmail.setFont(new Font("Times New Roman", Font.ITALIC, 15));
+        mainPanel.add(lblEmail);
         
-        Label l2 = new Label("Password:");
-        l2.setBounds(330, 430, 100, 30);
-        mainPanel.add(l2);
+        lblPassword.setText("Password");
+        lblPassword.setBounds(330, 430, 100, 30);
+        lblPassword.setFont(new Font("Times New Roman", Font.ITALIC, 15));
+        mainPanel.add(lblPassword);
         
-        Label l3 = new Label("Welcome Shopper!");
-        l3.setBounds(40, 200, 600, 100);
-        l3.setFont(new Font("Times New Roman", Font.BOLD, 50));
-        mainPanel.add(l3);
+        txtEmail.setBounds(330, 390, 300, 30);
+        txtPassword.setBounds(330, 460, 300, 30);
+        mainPanel.add(txtEmail);
+        mainPanel.add(txtPassword);
         
-        Label l4 = new Label("Please Login to continue");
-        l4.setBounds(330, 290, 300, 100);
-        l4.setFont(new Font("Times New Roman", Font.ITALIC, 15));
-        mainPanel.add(l4);
-        
-        TextField t1 = new TextField();
-        t1.setBounds(330, 390, 300, 30);
-        mainPanel.add(t1);
-        
-        TextField t3 = new TextField();
-        t3.setBounds(330, 460, 300, 30);
-        mainPanel.add(t3);
-        
-        Button a = new Button("Login");
-        a.setBounds(330, 500, 100, 30);
-        mainPanel.add(a);
-        
-        a.addActionListener(new ActionListener() {
+        buttonLog.setText("Login");
+        buttonLog.setBounds(330, 500, 100, 30);
+        buttonLog.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-                String Username = t1.getText();
-                String Password = t3.getText();
-                
-                if (Username.equals("Ed Dela Cruz") && Password.equals("OOP")) {
+                String Username = txtEmail.getText();
+                String Password = txtPassword.getText();
+                if(e.getSource() == buttonLog) {
+                     frame.dispose();
+                     homePage hp = new homePage();
+                /*if(Username.equals("Ed DelaCruz") && Password.equals("OOP")) {
                     JOptionPane.showMessageDialog(null, "Successfully Logged In!", "Login Success", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Login Failed. Please try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
+                } */
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Login Failed", "Login Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
+        mainPanel.add(buttonLog);
+        
+        
+        frame.add(mainPanel);
+
+
     }
+    
 }
