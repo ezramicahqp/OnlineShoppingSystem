@@ -1,7 +1,14 @@
 package OnlineShoppingUI;
 import javax.swing.*;
 import java.awt.*;
+ CarlosBote
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import java.awt.event.*;
+
 
 public class homePage extends JFrame implements ActionListener{
         
@@ -239,6 +246,83 @@ public class homePage extends JFrame implements ActionListener{
         btnPic6.setIcon(icon6);
         //btnPic6.setBorder(null);
        
+ CarlosBote
+       //FOR TEST (CLICKABLE LOGO)
+       JButton btnLogo = new JButton();
+       ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
+       btnLogo.setIcon(logo);
+       btnLogo.setBounds(20, 10, 100, 80); 
+       btnLogo.setBorder(null);
+       
+       
+       
+       JButton btnPic1 = new JButton();
+       btnPic1.setBounds(90, 40, 133, 150);
+       ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
+       btnPic1.setIcon(icon1);
+       btnPic1.setBorder(null);
+
+       JButton btnPic2 = new JButton();
+       btnPic2.setBounds(95,40,113,150);
+       ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
+       btnPic2.setIcon(icon2);
+       btnPic2.setBorder(null);
+
+       JButton btnPic3 = new JButton();
+       btnPic3.setBounds(75,40,135,150);
+       ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
+       btnPic3.setIcon(icon3);
+       btnPic3.setBorder(null);
+
+       JButton btnPic4 = new JButton(); 
+       btnPic4.setBounds(55,90,180,100);
+       ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
+       btnPic4.setIcon(icon4);
+       btnPic4.setBorder(null);
+
+
+       JButton btnPic5 = new JButton();  
+       btnPic5.setBounds(100,40,100,150);
+       ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
+       btnPic5.setIcon(icon5);
+       btnPic5.setBorder(null);
+      
+
+       JButton btnPic6 = new JButton();  
+       btnPic6.setBounds(100,40,100,150);
+       ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
+       btnPic6.setIcon(icon6);
+       btnPic6.setBorder(null);
+
+   
+       //FIRST ADD TO CART
+       JButton btnAddToCart1 = new JButton("Add to Cart");
+        btnAddToCart1.setBounds(150, 220, 100, 20);
+        btnAddToCart1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cartPageTwo cp2 = new cartPageTwo();
+                cp2.show();
+                tonsay.dispose();
+            } 
+        });
+    
+       
+       JButton btnAddToCart2 = new JButton("Add to Cart");
+        btnAddToCart2.setBounds(150, 220, 100, 20);
+       
+       JButton btnAddToCart3 = new JButton("Add to Cart");
+        btnAddToCart3.setBounds(150, 220, 100, 20);
+       
+       JButton btnAddToCart4 = new JButton("Add to Cart");
+        btnAddToCart4.setBounds(150, 220, 100, 20);
+       
+       JButton btnAddToCart5 = new JButton("Add to Cart");
+        btnAddToCart5.setBounds(150, 220, 100, 20);
+       
+       JButton btnAddToCart6 = new JButton("Add to Cart");
+=======
+ master
         btnAddToCart6.setBounds(150, 220, 100, 20);
         btnAddToCart6.addActionListener(this);
        
