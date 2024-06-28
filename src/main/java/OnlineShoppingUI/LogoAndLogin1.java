@@ -11,6 +11,7 @@ public class LogoAndLogin1 extends JFrame {
         setTitle("shOOPe");
         setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setLayout(null);
         setResizable(false);
         
