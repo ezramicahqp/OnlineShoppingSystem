@@ -148,7 +148,7 @@ public class homePage extends JFrame implements ActionListener{
         btnPic1.setBorder(null);
        
         btnAddToCart1.setBounds(150, 220, 100, 20);
-        btnAddToCart1.addActionListener(this);
+        //btnAddToCart1.addActionListener(this);
 
             panel1.setBackground(new Color(244, 205, 241));
             panel1.setBounds( 0 ,0,300,250);
@@ -161,7 +161,6 @@ public class homePage extends JFrame implements ActionListener{
                 //panel1.add(pricelbl);
                 
         //FIRST ADD TO CART
-       JButton btnAddToCart1 = new JButton("Add to Cart");
         btnAddToCart1.setBounds(150, 220, 100, 20);
         btnAddToCart1.addActionListener(new ActionListener(){
             @Override
@@ -355,7 +354,6 @@ public class homePage extends JFrame implements ActionListener{
 
 }
 
-   
         //ScrollBar 
         //JScrollPane scroll = JScrollPane (JScrollPane.HORIZONTAL_SCROLLBAR);
         // tonsay.add(scroll);
@@ -379,8 +377,9 @@ public class homePage extends JFrame implements ActionListener{
         cart.setVisible(true);
         new cartPage();
         }
-//        else if (e.getSource()==btnAddToCart1){
-//        cart.setVisible(true);
+//         else if (e.getSource()==btnAddToCart1){
+//               cart.setVisible(true);
+//            }
 //        new cartPage();
 //        }
 //        else if (e.getSource()==btnAddToCart2){
