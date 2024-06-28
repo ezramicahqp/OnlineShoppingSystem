@@ -20,6 +20,7 @@ public class cartPageTwo extends JFrame{
         frame.setTitle("shOOPe");
         frame.setVisible(true);
         frame.setLayout(null);
+        frame.setLocationRelativeTo(null);
         frame.add(panel);
         frame.add(pnlproduct);
         frame.add(pnlproduct2);
