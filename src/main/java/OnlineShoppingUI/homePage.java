@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class homePage extends JFrame{
     public homePage(){
@@ -245,10 +247,19 @@ public class homePage extends JFrame{
        btnPic6.setIcon(icon6);
        btnPic6.setBorder(null);
 
-
-       
+   
+       //FIRST ADD TO CART
        JButton btnAddToCart1 = new JButton("Add to Cart");
         btnAddToCart1.setBounds(150, 220, 100, 20);
+        btnAddToCart1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cartPageTwo cp2 = new cartPageTwo();
+                cp2.show();
+                tonsay.dispose();
+            } 
+        });
+    
        
        JButton btnAddToCart2 = new JButton("Add to Cart");
         btnAddToCart2.setBounds(150, 220, 100, 20);
