@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.*;
 
 
-public class homePage extends JFrame implements ActionListener{
+public class homePage extends JFrame {
+//implements ActionListener{
         
         private final JFrame tonsay = new JFrame();
         
@@ -85,7 +86,7 @@ public class homePage extends JFrame implements ActionListener{
        ImageIcon cart = new ImageIcon(new ImageIcon("cartIcon.png").getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT));
        btncart.setBounds(785,25,40,40);
        btncart.setIcon(cart);
-       btncart.addActionListener(this);
+     //  btncart.addActionListener(this);
        btncart.setBackground(null);
        btncart.setBorder(null);
        panel.add(btncart);
@@ -102,7 +103,7 @@ public class homePage extends JFrame implements ActionListener{
        ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
        btnLogo.setIcon(logo);
        btnLogo.setBounds(20, 10, 100, 80); 
-       btnLogo.addActionListener(this);
+   //    btnLogo.addActionListener(this);
        btnLogo.setBorder(null); 
        panel.add(btnLogo);
 
@@ -142,7 +143,7 @@ public class homePage extends JFrame implements ActionListener{
         producttxt1.setBackground(null);
         
         btnPic1.setBounds(90, 40, 133, 150);
-        btnPic1.addActionListener(this);
+    //    btnPic1.addActionListener(this);
         ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
         btnPic1.setIcon(icon1);
         btnPic1.setBorder(null);
@@ -162,14 +163,14 @@ public class homePage extends JFrame implements ActionListener{
                 
         //FIRST ADD TO CART
         btnAddToCart1.setBounds(150, 220, 100, 20);
-        btnAddToCart1.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cartPageTwo cp2 = new cartPageTwo();
-                cp2.show();
-                tonsay.dispose();
-            } 
-        });
+       // btnAddToCart1.addActionListener(new ActionListener(){
+         //  @Override
+          //  public void actionPerformed(ActionEvent e) {
+          //      cartPageTwo cp2 = new cartPageTwo();
+           //     cp2.show();
+           //     tonsay.dispose();
+       //     } 
+     //  });
 
 
 } 
@@ -190,13 +191,13 @@ public class homePage extends JFrame implements ActionListener{
         producttxt2.setBackground(null);
        
         btnPic2.setBounds(95,40,113,150);
-        btnPic2.addActionListener(this);
+    //    btnPic2.addActionListener(this);
         ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
         btnPic2.setIcon(icon2);
         btnPic2.setBorder(null);
        
         btnAddToCart2.setBounds(150, 220, 100, 20);
-        btnAddToCart2.addActionListener(this);
+     //   btnAddToCart2.addActionListener(this);
 
             panel2.setBackground(new Color(244, 205, 241));
             panel2.setBounds( 300 ,0,300,250);
@@ -229,11 +230,11 @@ public class homePage extends JFrame implements ActionListener{
         btnPic3.setBounds(75,40,135,150);
         ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
         btnPic3.setIcon(icon3);
-        btnPic3.addActionListener(this);
+        //btnPic3.addActionListener(this);
         btnPic3.setBorder(null);
        
         btnAddToCart3.setBounds(150, 220, 100, 20);
-        btnAddToCart3.addActionListener(this);
+      //  btnAddToCart3.addActionListener(this);
 
             panel3.setBackground (new Color(244, 205, 241));
             panel3.setBounds( 600,0,300,250);
@@ -263,13 +264,13 @@ public class homePage extends JFrame implements ActionListener{
        
         
         btnPic4.setBounds(55,90,180,100);
-        btnPic4.addActionListener(this);
+     //   btnPic4.addActionListener(this);
         ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
         btnPic4.setIcon(icon4);
         btnPic4.setBorder(null);
 
         btnAddToCart4.setBounds(150, 220, 100, 20);
-        btnAddToCart4.addActionListener(this);
+   //     btnAddToCart4.addActionListener(this);
 
             panel4.setBackground(new Color(244, 205, 241));
             panel4.setBounds( 0,250,300,350);
@@ -298,13 +299,13 @@ public class homePage extends JFrame implements ActionListener{
         producttxt5.setBackground(null);
        
         btnPic5.setBounds(100,40,100,150);
-        btnPic5.addActionListener(this);
+     //   btnPic5.addActionListener(this);
         ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
         btnPic5.setIcon(icon5);
         btnPic5.setBorder(null);
        
         btnAddToCart5.setBounds(150, 220, 100, 20);
-        btnAddToCart5.addActionListener(this);
+     //   btnAddToCart5.addActionListener(this);
 
             panel5.setBackground(new Color(244, 205, 241));
             panel5.setBounds( 300,250,300,350);
@@ -335,12 +336,12 @@ public class homePage extends JFrame implements ActionListener{
         
         btnPic6.setBounds(100,40,100,150);
         ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
-        btnPic6.addActionListener(this);
+       // btnPic6.addActionListener(this);
         btnPic6.setIcon(icon6);
         btnPic6.setBorder(null);
 
         btnAddToCart6.setBounds(150, 220, 100, 20);
-        btnAddToCart6.addActionListener(this);
+       // btnAddToCart6.addActionListener(this);
        
             panel6.setBackground(new Color(244, 205, 241));
             panel6.setBounds( 600,250,300,350);
@@ -365,18 +366,19 @@ public class homePage extends JFrame implements ActionListener{
        
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        cartPage cart = new cartPage();
-        Productview product = new Productview();
-        homePage logo = new homePage();
-        dispose();
+   // @Override
+  //  public void actionPerformed(ActionEvent e) {
+       // cartPage cart = new cartPage();
+      //  homePage logo = new homePage();
+      // dispose();
         
         
-        if (e.getSource() ==btncart){
-        cart.setVisible(true);
-        new cartPage();
-        }
+    //    if (e.getSource() ==btncart){
+   //     cart.setVisible(true);
+   //     new cartPage();
+    //    }
+    
+    //not included 
 //         else if (e.getSource()==btnAddToCart1){
 //               cart.setVisible(true);
 //            }
@@ -402,38 +404,40 @@ public class homePage extends JFrame implements ActionListener{
 //        cart.setVisible(true);
 //        new cartPage();
 //        }
-        else if (e.getSource()==btnPic1){
-        product.setVisible(true);
-        new Productview();
-        }
-        else if (e.getSource()==btnPic2){
-        product.setVisible(true);
-        new Productview();
-        }
+    
+     //changes   
+      //  else if (e.getSource()==btnPic1){
+      //  product.setVisible(true);
+      //  new Productview();
+     //   }
+    //    else if (e.getSource()==btnPic2){
+    //    product.setVisible(true);
+    //    new Productview();
+    //   }
         
-        else if (e.getSource()==btnPic3){
-        product.setVisible(true);
-        new Productview();
-        }
+     //   else if (e.getSource()==btnPic3){
+     //   product.setVisible(true);
+     //   new Productview();
+    //    }
         
-        else if (e.getSource()==btnPic4){
-        product.setVisible(true);
-        new Productview();
-        }
+    //    else if (e.getSource()==btnPic4){
+     //   product.setVisible(true);
+      //  new Productview();
+     //   }
         
-        else if (e.getSource()==btnPic5){
-        product.setVisible(true);
-        new Productview();
-        }
+     //   else if (e.getSource()==btnPic5){
+     //   product.setVisible(true);
+     //   new Productview();
+     //   }
         
-        else if (e.getSource()==btnPic6){
-        product.setVisible(true);
-        new Productview();
-        }
+     //   else if (e.getSource()==btnPic6){
+     //   product.setVisible(true);
+    //    new Productview();
+     //   }
         
-        else if (e.getSource()==btnLogo){
-        logo.setVisible(true);
-        new homePage();
-       }
+     //   else if (e.getSource()==btnLogo){
+      //  logo.setVisible(true);
+      //  new homePage();
+      //}
     }
-} 
+
