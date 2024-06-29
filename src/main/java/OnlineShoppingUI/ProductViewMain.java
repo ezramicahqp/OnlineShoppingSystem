@@ -5,13 +5,18 @@
  */
 package OnlineShoppingUI;
 
-
+import java.awt.EventQueue;
 public class ProductViewMain {
 
     
-    public static void main(String[] args) {
-        Productview pv = new Productview();
-           
-    } 
-    
+   public static void main(String[] args) {
+        // TODO code application logic here
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Productview pv = new Productview();
+               
+            }
+        });
+    }    
 }
