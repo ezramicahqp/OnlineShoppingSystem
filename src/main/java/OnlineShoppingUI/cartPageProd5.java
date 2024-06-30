@@ -5,9 +5,9 @@ import java.awt.Font;
 import java.awt.Image;
 import javax.swing.*;
 
-public class cartPageTwo extends JFrame{
+public class cartPageProd5 extends JFrame{
 
-    public cartPageTwo(){
+    public cartPageProd5(){
        //PANELS
        JPanel panel = new JPanel();
        JPanel pnlproduct = new JPanel();
@@ -65,9 +65,9 @@ public class cartPageTwo extends JFrame{
         
         
         
-        // PRODUCT  1
+        // PRODUCT  
         JTextField txtproductName = new JTextField();
-        txtproductName.setText("Black Shirt");
+        txtproductName.setText("Women's Pants");
         txtproductName.setBounds(350, 30, 500, 20);
         txtproductName.setEditable(false);
         txtproductName.setBorder(null);
@@ -111,65 +111,17 @@ public class cartPageTwo extends JFrame{
         checkBox.setBackground(null);
         
         JButton btnPicture = new JButton();
-        ImageIcon product = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
+        ImageIcon product = new ImageIcon(new ImageIcon("pants1.png").getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
         btnPicture.setIcon(product);
         btnPicture.setBounds(150, 30, 130, 130); 
         btnPicture.setBorder(null);
        
         
-//        // PRODUCT  2
-//        JTextField txtproductName2 = new JTextField();
-//        txtproductName2.setText("Graphic Striped Trim Sweater Vest");
-//        txtproductName2.setBounds(350, 30, 500, 20);
-//        txtproductName2.setEditable(false);
-//        txtproductName2.setBorder(null);
-//        txtproductName2.setBackground(null);
-//        
-//        JLabel lblProductSize2 = new JLabel("size:");
-//        lblProductSize2.setBounds(500, 90, 100, 20);
-//        JTextField txtSize2 = new JTextField();
-//        txtSize2.setBounds(550, 90, 100, 20);
-//        txtSize2.setEditable(false);
-//        txtSize2.setBorder(null);
-//        txtSize2.setBackground(null);
-//        
-//        JLabel lblProductColor2 = new JLabel("color:");
-//        lblProductColor2.setBounds(350, 90, 100, 20);
-//        JTextField txtColor2 = new JTextField();
-//        txtColor2.setBounds(400, 90, 100, 20);
-//        txtColor2.setEditable(false);
-//        txtColor2.setBorder(null);
-//        txtColor2.setBackground(null);
-//        
-//        JTextField txtPrice2 = new JTextField();
-//        txtPrice2.setText("Php 559");
-//        txtPrice2.setBounds(350, 130, 150, 20);
-//        txtPrice2.setEditable(false);
-//        txtPrice2.setBorder(null);
-//        txtPrice2.setBackground(null);
-//        
-//        JLabel lblProductQuantity2 = new JLabel("quantity:");
-//        lblProductQuantity2.setBounds(650, 90, 150, 20);
-//        JTextField txtQuantity2 = new JTextField();
-//        txtQuantity2.setBounds(700, 90, 100, 20);
-//        txtQuantity2.setEditable(false);
-//        txtQuantity2.setBorder(null);
-//        txtQuantity2.setBackground(null);
-//        
-//        JCheckBox checkBox2 = new JCheckBox();
-//        checkBox2.setSize(20, 20);
-//        checkBox2.setBounds(50, 80,20, 20);
-//        checkBox2.setBackground(null);
-//        
-//        JButton btnPicture2 = new JButton();
-//        ImageIcon product2 = new ImageIcon(new ImageIcon("Sweater_Vest.jpg").getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
-//        btnPicture2.setIcon(product2);
-//        btnPicture2.setBounds(150, 30, 130, 130); 
-//        btnPicture2.setBorder(null);
+
        
         
         
-        //PANEL product 1
+        //PANEL product 
         pnlproduct.add(txtproductName);
         pnlproduct.add(lblProductColor);
         pnlproduct.add(txtColor);
@@ -187,25 +139,10 @@ public class cartPageTwo extends JFrame{
         
         
         
-//        //PANEL product 2
-//        pnlproduct2.add(txtproductName2);
-//        pnlproduct2.add(lblProductColor2);
-//        pnlproduct2.add(txtColor2);
-//        pnlproduct2.add(lblProductSize2);
-//        pnlproduct2.add(txtSize2);
-//        pnlproduct2.add(txtPrice2);
-//        pnlproduct2.add(lblProductQuantity2);
-//        pnlproduct2.add(txtQuantity2);
-//        pnlproduct2.add(checkBox2);
-//        pnlproduct2.add(btnPicture2);
-//        pnlproduct2.setSize(900, 200);
-//        pnlproduct2.setBounds(0, 270, 900, 200);
-//        pnlproduct2.setBackground(new Color(244, 205, 241));
-        
         
     }
     public static void main(String[] args){
-        new cartPageTwo();
+        new cartPageProd5();
         
         
         
