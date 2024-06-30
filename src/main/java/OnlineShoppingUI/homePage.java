@@ -148,7 +148,7 @@ public class homePage extends JFrame {
         btnPic1.setIcon(icon1);
         btnPic1.setBorder(null);
        
-        btnAddToCart1.setBounds(150, 220, 100, 20);
+        //btnAddToCart1.setBounds(150, 220, 100, 20);
         //btnAddToCart1.addActionListener(this);
 
             panel1.setBackground(new Color(244, 205, 241));
@@ -163,16 +163,63 @@ public class homePage extends JFrame {
                 
         //FIRST ADD TO CART
         btnAddToCart1.setBounds(150, 220, 100, 20);
-       // btnAddToCart1.addActionListener(new ActionListener(){
-         //  @Override
-          //  public void actionPerformed(ActionEvent e) {
-          //      cartPageTwo cp2 = new cartPageTwo();
-           //     cp2.show();
-           //     tonsay.dispose();
-       //     } 
-     //  });
+        btnAddToCart1.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd1();
+                tonsay.dispose();
+            } 
+       });
 
-
+        //SECOND ADD TO CART
+        btnAddToCart2.setBounds(150, 220, 100, 20);
+        btnAddToCart2.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd2();
+                tonsay.dispose();
+            } 
+       });
+        
+        //THIRD ADD TO CART
+        btnAddToCart3.setBounds(150, 220, 100, 20);
+        btnAddToCart3.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd3();
+                tonsay.dispose();
+            } 
+       });
+        
+        //FOURTH ADD TO CART
+        btnAddToCart4.setBounds(150, 220, 100, 20);
+        btnAddToCart4.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd4();
+                tonsay.dispose();
+            } 
+       });
+        
+        //FIFTH ADD TO CART
+        btnAddToCart5.setBounds(150, 220, 100, 20);
+        btnAddToCart5.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd5();
+                tonsay.dispose();
+            } 
+       });
+        
+        //SIXTH ADD TO CART
+        btnAddToCart6.setBounds(150, 220, 100, 20);
+        btnAddToCart6.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new cartPageProd6();
+                tonsay.dispose();
+            } 
+       });
 } 
 
     public void products2(){
@@ -196,8 +243,8 @@ public class homePage extends JFrame {
         btnPic2.setIcon(icon2);
         btnPic2.setBorder(null);
        
-        btnAddToCart2.setBounds(150, 220, 100, 20);
-     //   btnAddToCart2.addActionListener(this);
+        //btnAddToCart2.setBounds(150, 220, 100, 20);
+     // btnAddToCart2.setBounds  btnAddToCart2.addActionListener(this);
 
             panel2.setBackground(new Color(244, 205, 241));
             panel2.setBounds( 300 ,0,300,250);
