@@ -142,7 +142,16 @@ public class homePage extends JFrame {
         producttxt1.setBorder(null);
         producttxt1.setBackground(null);
         
+        //FIRST PRODUCT VIEW
         btnPic1.setBounds(90, 40, 133, 150);
+        btnPic1.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView1();
+                tonsay.dispose();
+            } 
+       });
+        
     //    btnPic1.addActionListener(this);
         ImageIcon icon1 = new ImageIcon(new ImageIcon("blackshirt.png").getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
         btnPic1.setIcon(icon1);
@@ -237,7 +246,16 @@ public class homePage extends JFrame {
         producttxt2.setBorder(null);
         producttxt2.setBackground(null);
        
+        //SECOND PRODUCT VIEW
         btnPic2.setBounds(95,40,113,150);
+        btnPic2.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView2();
+                tonsay.dispose();
+            } 
+       });
+        
     //    btnPic2.addActionListener(this);
         ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
         btnPic2.setIcon(icon2);
@@ -273,8 +291,16 @@ public class homePage extends JFrame {
         producttxt3.setBorder(null);
         producttxt3.setBackground(null);
         
-        
+        //THIRD PRODUCT VIEW
         btnPic3.setBounds(75,40,135,150);
+        btnPic3.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView3();
+                tonsay.dispose();
+            } 
+       });
+        
         ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
         btnPic3.setIcon(icon3);
         //btnPic3.addActionListener(this);
@@ -309,8 +335,16 @@ public class homePage extends JFrame {
         producttxt4.setBorder(null);
         producttxt4.setBackground(null);
        
-        
+        //FOURTH PRODUCT VIEW
         btnPic4.setBounds(55,90,180,100);
+        btnPic4.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView4();
+                tonsay.dispose();
+            } 
+       });
+        
      //   btnPic4.addActionListener(this);
         ImageIcon icon4 = new ImageIcon (new ImageIcon("shoes.png").getImage().getScaledInstance(180,100, Image.SCALE_DEFAULT));
         btnPic4.setIcon(icon4);
@@ -345,7 +379,16 @@ public class homePage extends JFrame {
         producttxt5.setBorder(null);
         producttxt5.setBackground(null);
        
+        //FIFTH PRODUCT VIEW
         btnPic5.setBounds(100,40,100,150);
+        btnPic5.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView5();
+                tonsay.dispose();
+            } 
+       });
+        
      //   btnPic5.addActionListener(this);
         ImageIcon icon5 = new ImageIcon (new ImageIcon("pants1.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
         btnPic5.setIcon(icon5);
@@ -381,7 +424,16 @@ public class homePage extends JFrame {
         producttxt6.setBorder(null);
         producttxt6.setBackground(null);
         
+        //SIXTH PRODUCT VIEW
         btnPic6.setBounds(100,40,100,150);
+        btnPic6.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new ProductView6();
+                tonsay.dispose();
+            } 
+       });
+        
         ImageIcon icon6 = new ImageIcon (new ImageIcon("pants.png").getImage().getScaledInstance(100,150, Image.SCALE_DEFAULT));
        // btnPic6.addActionListener(this);
         btnPic6.setIcon(icon6);
