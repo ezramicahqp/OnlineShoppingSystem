@@ -88,6 +88,14 @@ public class ProductView2 extends JFrame implements ActionListener{
         ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
         btnLogo.setIcon(logo);
         btnLogo.setBounds(20, 10, 100, 80); 
+        //BACK TO HOMEPAGE
+        btnLogo.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new homePage();
+                dispose();
+            } 
+        });
         btnLogo.setBorder(null);
         
         

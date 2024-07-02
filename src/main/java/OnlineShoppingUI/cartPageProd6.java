@@ -3,6 +3,8 @@ package OnlineShoppingUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class cartPageProd6 extends JFrame{
@@ -49,6 +51,14 @@ public class cartPageProd6 extends JFrame{
         ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(90, 70, Image.SCALE_DEFAULT));
         btnLogo.setIcon(logo);
         btnLogo.setBounds(30, 0, 90, 70); 
+        //BACK TO HOMEPAGE
+        btnLogo.addActionListener(new ActionListener(){
+           @Override
+            public void actionPerformed(ActionEvent e) {
+                new homePage();
+                frame.dispose();
+            } 
+        });
         btnLogo.setBorder(null);
 
         
