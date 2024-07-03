@@ -78,6 +78,13 @@ public class HomePage extends JFrame {
        btncart.setIcon(cart);
        btncart.setBackground(null);
        btncart.setBorder(null);
+       btncart.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new CartPage();
+            tonsay.dispose();
+        } 
+    });
        panel.add(btncart);
       
        
