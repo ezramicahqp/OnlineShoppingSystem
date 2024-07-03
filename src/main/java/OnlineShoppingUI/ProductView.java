@@ -66,26 +66,32 @@ public class ProductView extends JFrame implements ActionListener{
         btncart.setIcon(cart);
         btncart.setBackground(null);
         btncart.setBorder(null);
+        btncart.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new CartPage();
+            f.dispose();
+        } 
+    });
+     
        
-        btncategory.setBounds(680,30,90,30);
-        btncategory.setFont(new Font("Roboto",Font.BOLD, 12));
         
-//        
-//        cmbcolor = new JComboBox<>(Color);
-//        cmbcolor.setBounds(500,180,100,40);
-//        panel2.add(cmbcolor);
+        
+        cmbcolor = new JComboBox<>(Color);
+        cmbcolor.setBounds(500,250,100,30);
+        panel2.add(cmbcolor);
        
-//        
-//        cmbsize = new JComboBox<>(Sizes);
-//        cmbsize.setBounds(700,180,100,40);
-//        panel2.add(cmbsize);
+        
+        cmbsize = new JComboBox<>(Sizes);
+        cmbsize.setBounds(700,250,100,30);
+        panel2.add(cmbsize);
 
      
-        btnadd.setBounds(500,250,100,40);
+        btnadd.setBounds(500,300,100,30);
         panel2.add(btnadd);
      
         
-        btnquantity.setBounds(700,250,100,40);
+        btnquantity.setBounds(700,300,100,30);
         panel2.add(btnquantity);
     
         
@@ -122,19 +128,12 @@ public class ProductView extends JFrame implements ActionListener{
        btnPic3.setIcon(icon3);
        btnPic3.setBorder(null);
        
-        
-        txtDescription.setText("Description");
-        txtDescription.setEditable(false);
-        txtDescription.setBorder(null);
-        txtDescription.setBackground(null);
-        txtDescription.setBounds(500,300,400,250);
-        panel2.add(txtDescription);
+      
      
         
         panel.setBackground(new Color(155, 114, 221));
         panel.setBounds( 0,0,900,100);
         panel.add(btncart);
-        panel.add(btncategory);
         panel.add(btnLogo);
         panel.setLayout(null);
        
@@ -158,7 +157,7 @@ public class ProductView extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
   
 }
 
