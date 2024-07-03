@@ -1,5 +1,8 @@
 package OnlineShoppingUI;
 
+import OnlineShoppingBL.*;
+import OnlineShoppingDL.*;
+import OnlineShoppingModels.*;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -258,7 +261,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new homePage();
+        new HomePage();
         frame.dispose();
     }
 }

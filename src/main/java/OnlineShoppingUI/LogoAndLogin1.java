@@ -170,7 +170,7 @@ public class LogoAndLogin1 implements ActionListener {
                 
                  if(e.getSource() == button) {
                      
-                     homePage hp = new homePage();
+                     HomePage hp = new HomePage();
                      frame.dispose();
 
                 } else {
