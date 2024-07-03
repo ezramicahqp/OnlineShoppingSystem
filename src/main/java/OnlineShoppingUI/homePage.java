@@ -299,7 +299,7 @@ public class homePage extends JFrame {
                 new ProductView3();
                 tonsay.dispose();
             } 
-       });
+        });
         
         ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
         btnPic3.setIcon(icon3);

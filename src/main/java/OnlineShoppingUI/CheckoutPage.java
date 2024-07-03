@@ -258,10 +258,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        dispose();
-        homePage homepage = new homePage();
-        homepage.setVisible(true);
-        
-        
+        new homePage();
+        frame.dispose();
     }
 }
