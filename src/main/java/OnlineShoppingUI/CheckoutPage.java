@@ -1,5 +1,8 @@
 package OnlineShoppingUI;
 
+import OnlineShoppingBL.*;
+import OnlineShoppingDL.*;
+import OnlineShoppingModels.*;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -84,7 +87,13 @@ public class CheckoutPage extends JFrame implements ActionListener{
         btnLogo.setIcon(logo);
         btnLogo.setBounds(30, 0, 90, 70); 
         btnLogo.setBorder(null);
-        btnLogo.addActionListener(this);
+        btnLogo.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new HomePage();
+            frame.dispose();
+        } 
+    });
         
         //MAIN PANEL
         panel.add(label);
@@ -249,16 +258,10 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlplaceOrder.setLayout(null);    
     }
     
-    
-    public static void main(String[] args){
-        new CheckoutPage();
-         
-        
-    }
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
-        new homePage();
+        new HomePage();
         frame.dispose();
     }
 }

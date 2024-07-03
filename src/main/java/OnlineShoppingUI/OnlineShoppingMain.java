@@ -4,14 +4,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class LogoAndLogin extends JFrame implements ActionListener {
+public class OnlineShoppingMain extends JFrame implements ActionListener {
 
 private final JFrame frame1 = new JFrame();
 private final JPanel mainPanel = new JPanel();
 private final JLabel lblContinue = new JLabel();
 private final JButton btnLogo = new JButton();
 
-public LogoAndLogin() {
+public OnlineShoppingMain() {
    mPanel();
         frame1.setTitle("shOOpe!");
         frame1.setSize(900,700);
@@ -35,7 +35,7 @@ public void mPanel() {
         lblContinue.setFont(new Font("Roboto", Font.BOLD, 16));
         mainPanel.add(lblContinue);
 
-        ImageIcon logo = new ImageIcon(new ImageIcon("logoshoope.png").getImage().getScaledInstance(300, 250,      Image.SCALE_DEFAULT));
+        ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(300, 250,      Image.SCALE_DEFAULT));
         btnLogo.setIcon(logo);
        // btnLogo.setHorizontalTextPosition(JButton.CENTER);
        // btnLogo.setVerticalTextPosition(JButton.CENTER);
@@ -71,6 +71,6 @@ public void mPanel() {
 
 
     public static void main(String[] args) {
-        new LogoAndLogin();
+        new OnlineShoppingMain();
     }
 }
