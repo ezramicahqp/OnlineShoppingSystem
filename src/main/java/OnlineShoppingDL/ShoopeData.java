@@ -27,5 +27,9 @@ public class ShoopeData {
     {
        return shoopeDatabase.GetNameOfProduct(prodName.ProductName);
     }
+    
+    public UserCredentials GetGuestCredentials(){
+        return shoopeDatabase.GetGuestUser();
+    }
 }
 

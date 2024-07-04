@@ -18,5 +18,10 @@ public class ShoopeFeatures {
         ArrayList<ProductInfo> products = shoopeData.GetProductInfo();
         return products;
     }
+    
+    public UserCredentials GetGuestCredentials(){
+        return shoopeData.GetGuestCredentials();
+    }
+    
 }
 

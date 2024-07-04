@@ -1,11 +1,17 @@
 package OnlineShoppingUI;
 
+import OnlineShoppingBL.*;
+import OnlineShoppingDL.*;
+import OnlineShoppingModels.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class LogoAndLogin1 implements ActionListener {
+    
+    ShoopeFeatures features = new ShoopeFeatures();
     
     private final JFrame frame = new JFrame();
     
@@ -130,32 +136,9 @@ public class LogoAndLogin1 implements ActionListener {
         lblLogin.setFont(new Font("Times New Roman", Font.ITALIC, 15));
         //mainPanel.add(lblLogin);
         frame.add(lblLogin);
-       
         
-        
-
-       
-        
-       
-        
-        
-        /*button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String Username = txtEmailAdd.getText();
-                String Password = txtPassword.getText();
-                
-                if (Username.equals("Ed Dela Cruz") && Password.equals("OOP")) {
-                    JOptionPane.showMessageDialog(null, "Successfully Logged In!", "Login Success", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Login Failed. Please try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-        */
         frame.setVisible(true);
         
-
     }
  
 
@@ -168,8 +151,11 @@ public class LogoAndLogin1 implements ActionListener {
                 String Username = txtEmailAdd.getText();
                 String Password = txtPassword.getText();
                 
-                 if(e.getSource() == button) {
-                     
+                UserCredentials user = new UserCredentials();
+                user = features.GetGuestCredentials();
+                
+                 if(Username.equals(user.Username) && Password.equals(user.Password)) {
+                     JOptionPane.showMessageDialog(null, "Login Successful. Welcome!", "Login Success", JOptionPane.ERROR_MESSAGE);
                      HomePage hp = new HomePage();
                      frame.dispose();
 
@@ -179,14 +165,7 @@ public class LogoAndLogin1 implements ActionListener {
             }
         });
         
-        
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
- 
-
-    
-    
 
 } 
 

@@ -166,7 +166,7 @@ public class HomePage extends JFrame {
     producttxt1.setBackground(null);
     panel1.add(producttxt1);
 
-    ImageIcon icon1 = new ImageIcon(new ImageIcon(String.valueOf(product.image)).getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
+    ImageIcon icon1 = new ImageIcon(new ImageIcon(String.valueOf(product.Picture)).getImage().getScaledInstance(133, 150, Image.SCALE_DEFAULT));
     btnPic1.setIcon(icon1);
     btnPic1.setBorder(null);
     btnPic1.setBounds(90, 40, 133, 150);
@@ -196,7 +196,7 @@ public class HomePage extends JFrame {
     // Setting panel properties
     panel1.setBackground(new Color(244, 205, 241));
     panel1.setLayout(null);
-    panel1.setBounds(0, y, 300, 250);
+    panel1.setBounds(x, y, 300, 250);
     
     // Adding the panel to the main container
     productsMain.add(panel1);
@@ -238,11 +238,14 @@ for (int i = 1; i < productInfo.size(); i+=3) {
     producttxt2.setBackground(null);
     panel2.add(producttxt2);
 
-    ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));
+    /*ImageIcon icon2 = new ImageIcon (new ImageIcon("blouse.png").getImage().getScaledInstance(113,150, Image.SCALE_DEFAULT));*/
+    ImageIcon icon2 = new ImageIcon (new ImageIcon(product.Picture).getImage().getScaledInstance(133,150, Image.SCALE_DEFAULT));
     btnPic2.setIcon(icon2);
     btnPic2.setBorder(null);
     btnPic2.setBounds(90, 40, 133, 150);
     panel2.add(btnPic2);
+    
+
 
     // Adding "Add to Cart" button with ActionListener
     btnAddToCart2.setBounds(150, 220, 100, 20);
@@ -310,7 +313,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     producttxt3.setBackground(null);
     panel3.add(producttxt3);
 
-     ImageIcon icon3 = new ImageIcon (new ImageIcon("shoes2.png").getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
+     ImageIcon icon3 = new ImageIcon (new ImageIcon(product.Picture).getImage().getScaledInstance(135,150, Image.SCALE_DEFAULT));
      btnPic3.setIcon(icon3);
     btnPic3.setBorder(null);
     btnPic3.setBounds(90, 40, 133, 150);
@@ -324,7 +327,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     btnAddToCart3.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.Picture);
             tonsay.dispose();
         } 
     });
@@ -332,7 +335,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     btnPic3.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.Picture);
             tonsay.dispose();
         } 
     });

@@ -31,7 +31,7 @@ public class ShoopeDatabase {
     public ArrayList<ProductInfo> GetProductInfo(){
         
        String selectStatement 
-        = "select image, product_id, product_name, product_price, product_description from product_info";
+        = "select image, product_id, product_name, product_price, product_description, picture from product_info";
        
        ArrayList<ProductInfo> productInfo = new ArrayList<ProductInfo>();
        
@@ -43,20 +43,20 @@ public class ShoopeDatabase {
 
             while(resultSet.next()) {
                 
-                //Blob image = resultSet.getBlob("image");
-                byte[] image = resultSet.getBytes("image");
+                
                 int productID = resultSet.getInt("product_id");
                 String productName = resultSet.getString("product_name");
                 int productPrice = resultSet.getInt("product_price");
-                String description = resultSet.getString("product_description");
+                String picture = resultSet.getString("picture");
+                        
                 
 
 
                 ProductInfo readProductInfo = new ProductInfo();
-                readProductInfo.image = image;
                 readProductInfo.ProductID =  productID;
                 readProductInfo.ProductName = productName;
                 readProductInfo.ProductPrice = productPrice;
+                readProductInfo.Picture = picture;
               
                
                 productInfo.add(readProductInfo);
@@ -71,7 +71,8 @@ public class ShoopeDatabase {
     
         return productInfo;
     }
-    
+    //ang gagawin ko sana dito is gagamitin ko yung pinasa na prodName galing kay homepage papunta kay product view 
+    //tas yun yung gagamitin ko sa where statement para makapagbato sya ng Price, at imagepapunta kay productview
     ArrayList<ProductInfo> GetNameOfProduct(String ProductName) {
         String findCommand = "SELECT product_name, product_price, image from product_info where product_name = ?";
         ArrayList<ProductInfo> product  = new ArrayList<ProductInfo>();
@@ -85,14 +86,14 @@ public class ShoopeDatabase {
             try (ResultSet resultSet = selectCommand.executeQuery();) {
                 if (resultSet.next()) {
                     
-                byte[] image = resultSet.getBytes("image");
+                String picture = resultSet.getString("picture");
                 String productName = resultSet.getString("product_name");
                 int productPrice = resultSet.getInt("product_price");
                 
                 ProductInfo readProductInfo = new ProductInfo();
                 readProductInfo.ProductName = productName;
-                readProductInfo.ProductPrice = productPrice;
-                readProductInfo.image = image;   
+                readProductInfo.ProductPrice = productPrice; 
+                readProductInfo.Picture = picture;
                 
                 product.add(readProductInfo);
                 }
@@ -104,7 +105,36 @@ public class ShoopeDatabase {
         return product;
     }
 
-   
+    public UserCredentials GetGuestUser()
+    {
+        String selectStatement 
+        = "select username, password from tbl_users";
+       
+        UserCredentials guestCredentials = new UserCredentials();
+       
+       try {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection(url, user, password);
+           PreparedStatement selectCommand = connection.prepareStatement(selectStatement);
+           ResultSet resultSet = selectCommand.executeQuery();
+
+            while(resultSet.next()) {
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                
+                guestCredentials.Username = username;
+                guestCredentials.Password = password;
+            }
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver not found");
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+        return guestCredentials;
+    }
 
     
     

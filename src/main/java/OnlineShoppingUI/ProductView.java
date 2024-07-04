@@ -103,7 +103,7 @@ public class ProductView extends JFrame implements ActionListener{
         name.setBounds(500,90,300,50);
         panel2.add(name);
         
-        //txtPrice.setText(String.valueOf(prodInfo));
+        txtPrice.setText(productName);
         txtPrice.setBounds(500,130,300,50);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
