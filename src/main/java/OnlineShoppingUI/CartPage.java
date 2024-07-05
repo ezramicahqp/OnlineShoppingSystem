@@ -15,26 +15,26 @@ import javax.swing.*;
 
 public class CartPage extends JFrame implements ActionListener{
 
-    private final JFrame frame = new JFrame();
-    private final JPanel upperPanel = new JPanel();
-    private final JPanel mainPanel = new JPanel();
-    private final JLabel label = new JLabel("My Cart");
-    private final JButton btnLogo = new JButton();
+    private  JFrame frame = new JFrame();
+    private  JPanel upperPanel = new JPanel();
+    private  JPanel mainPanel = new JPanel();
+    private  JLabel label = new JLabel("My Cart");
+    private  JButton btnLogo = new JButton();
    // private final JButton btnDelete = new JButton("Delete");
-    private final JButton btnCheckout = new JButton("Checkout");
+    private  JButton btnCheckout = new JButton("Checkout");
     
     
-    private final JPanel pnlproduct = new JPanel();
-    private final JButton btnPicture = new JButton();
-    private final JTextField txtproductName = new JTextField();
-    private final JLabel lblProductSize = new JLabel("size:");
-    private final JTextField txtSize = new JTextField();
-    private final JLabel lblProductColor = new JLabel("color:");
-    private final JTextField txtColor = new JTextField();
-    private final JTextField txtPrice = new JTextField();
-    private final JLabel lblProductQuantity = new JLabel("quantity:");
-    private final JTextField txtQuantity = new JTextField();
-    private final JCheckBox checkBox = new JCheckBox();
+    private  JPanel pnlproduct;
+    private  JButton btnPicture;
+    private  JTextField txtproductName;
+    private  JLabel lblProductSize;
+    private  JTextField txtSize;
+    private  JLabel lblProductColor;
+    private  JTextField txtColor;
+    private  JTextField txtPrice;
+    private  JLabel lblProductQuantity;
+    private  JTextField txtQuantity;
+    //private  JCheckBox checkBox = new JCheckBox();
     private  ImageIcon logo = new ImageIcon("shoopelogo.png");
     
     ShoopeFeatures shoopeFeatures = new ShoopeFeatures();
@@ -106,8 +106,20 @@ public class CartPage extends JFrame implements ActionListener{
     
     for (int i = 0; i < productInfo.size(); i++) {  
         
+        pnlproduct = new JPanel();
+        btnPicture = new JButton();
+        txtproductName = new JTextField();
+        lblProductSize = new JLabel("size:");
+        txtSize = new JTextField();
+        lblProductColor = new JLabel("color:");
+        txtColor = new JTextField();
+        txtPrice = new JTextField();
+        lblProductQuantity = new JLabel("quantity:");
+        txtQuantity = new JTextField();
+        
         final ProductInfo product = productInfo.get(i);
         
+        txtproductName = new JTextField();
         txtproductName.setText(product.ProductName);
         txtproductName.setBounds(350, 30, 500, 20);
         txtproductName.setEditable(false);
@@ -150,9 +162,9 @@ public class CartPage extends JFrame implements ActionListener{
         txtQuantity.setBackground(null);
         pnlproduct.add(txtQuantity);
         
-        checkBox.setSize(20, 20);
-        checkBox.setBounds(50, 80,20, 20);
-        checkBox.setBackground(null);
+//        checkBox.setSize(20, 20);
+//        checkBox.setBounds(50, 80,20, 20);
+//        checkBox.setBackground(null);
 //        checkBox.addActionListener(new ActionListener(){
 //        @Override
 //        public void actionPerformed(ActionEvent e) {
