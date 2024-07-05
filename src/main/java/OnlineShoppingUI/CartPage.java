@@ -20,7 +20,7 @@ public class CartPage extends JFrame implements ActionListener{
     private final JPanel mainPanel = new JPanel();
     private final JLabel label = new JLabel("My Cart");
     private final JButton btnLogo = new JButton();
-    private final JButton btnDelete = new JButton("Delete");
+   // private final JButton btnDelete = new JButton("Delete");
     private final JButton btnCheckout = new JButton("Checkout");
     
     
@@ -76,13 +76,19 @@ public class CartPage extends JFrame implements ActionListener{
     });
         upperPanel.add(btnLogo);
         
-        btnDelete.setBounds(650, 20, 80, 25);
-        btnDelete.addActionListener(this);
-        upperPanel.add(btnDelete);
+//        btnDelete.setBounds(650, 20, 80, 25);
+//        btnDelete.addActionListener(this);
+//        upperPanel.add(btnDelete);
         
-        btnCheckout.setBounds(750, 20, 90, 25);
-        btnCheckout.addActionListener(this);
-        upperPanel.add(btnCheckout);
+//        btnCheckout.setBounds(750, 20, 90, 25);
+//        btnCheckout.addActionListener(new ActionListener(){
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
+//            frame.dispose();
+//        } 
+//    });
+//        upperPanel.add(btnCheckout);
         upperPanel.setLayout(null);
    
          mainPanel.setBackground(new Color(244, 205, 241));
@@ -147,25 +153,25 @@ public class CartPage extends JFrame implements ActionListener{
         checkBox.setSize(20, 20);
         checkBox.setBounds(50, 80,20, 20);
         checkBox.setBackground(null);
-        checkBox.addActionListener(new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==btnDelete){
-            ProductInfo prodInfo = new ProductInfo();
-            
-            prodInfo.ProductName = product.ProductName;
-            prodInfo.ProductSize = product.ProductSize;
-            prodInfo.ProductColor = product.ProductColor;
-            
-            
-            shoopeFeatures.DeleteItem(prodInfo);
-            }else if(e.getSource()==btnCheckout){
-            var x = new CheckoutPage();
-            }
-            frame.dispose();
-        } 
-    });
-        pnlproduct.add(checkBox);
+//        checkBox.addActionListener(new ActionListener(){
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            if(e.getSource()==btnDelete){
+//            ProductInfo prodInfo = new ProductInfo();
+//            
+//            prodInfo.ProductName = product.ProductName;
+//            prodInfo.ProductSize = product.ProductSize;
+//            prodInfo.ProductColor = product.ProductColor;
+//            
+//            
+//            shoopeFeatures.DeleteItem(prodInfo);
+//            }else if(e.getSource()==btnCheckout){
+//            var x = new CheckoutPage();
+//            }
+//            frame.dispose();
+//        } 
+//    });
+//        pnlproduct.add(checkBox);
         
         
         ImageIcon productPicture = new ImageIcon(new ImageIcon(product.Picture).getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
@@ -173,6 +179,16 @@ public class CartPage extends JFrame implements ActionListener{
         btnPicture.setBounds(150, 30, 130, 130); 
         btnPicture.setBorder(null);
         pnlproduct.add(btnPicture);
+        
+        btnCheckout.setBounds(750, 20, 90, 25);
+        btnCheckout.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            var x = new CheckoutPage(product.ProductName, product.Picture,product.ProductSize, product.ProductColor,product.ItemTotal,product.Quantity);
+            frame.dispose();
+        } 
+        });
+        upperPanel.add(btnCheckout);
         
         pnlproduct.setBounds(0, y, 900, 200);
         pnlproduct.setBackground(new Color(244, 205, 241));

@@ -299,22 +299,60 @@ public class ShoopeDatabase {
         return productInfo;
     }
     
-    public void DeleteItemInCart(String productName, String color, String size){
+//    public void DeleteItemInCart(String productName, String color, String size){
+//        
+//       String deleteStatement
+//        = "DELETE FROM tbl_cartitems WHERE product_name =? and product_color = ? and product_size = ? ";
+//       
+//       try {
+//           Class.forName("com.mysql.cj.jdbc.Driver");
+//           Connection connection = DriverManager.getConnection(url, user, password);
+//           PreparedStatement deleteCommand = connection.prepareStatement(deleteStatement);
+//           
+//           {
+//            deleteCommand.setString(1, productName);   
+//            deleteCommand.setString(2, color);
+//            deleteCommand.setString(3, size);
+//            
+//            deleteCommand.executeUpdate();
+//            }
+//        }
+//        catch (ClassNotFoundException e) {
+//            System.out.println("MySQL JDBC Driver not found");
+//            e.printStackTrace();
+//        }catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    
+//    }
+
+    public ArrayList<UserInfo> GetUserInfo(){
         
-       String deleteStatement
-        = "DELETE FROM tbl_cartitems WHERE product_name =? and product_color = ? and product_size = ? ";
+       String selectStatement 
+        = "select customer_name, customer_address, customer_number from user_info";
+       
+       ArrayList<UserInfo> userInfo = new ArrayList<UserInfo>();
        
        try {
            Class.forName("com.mysql.cj.jdbc.Driver");
            Connection connection = DriverManager.getConnection(url, user, password);
-           PreparedStatement deleteCommand = connection.prepareStatement(deleteStatement);
-           
-           {
-            deleteCommand.setString(1, productName);   
-            deleteCommand.setString(2, color);
-            deleteCommand.setString(3, size);
-            
-            deleteCommand.executeUpdate();
+           PreparedStatement selectCommand = connection.prepareStatement(selectStatement);
+           ResultSet resultSet = selectCommand.executeQuery();
+
+            while(resultSet.next()) {
+                
+                String name = resultSet.getString("customer_name");
+                String address = resultSet.getString("customer_address");
+                String number = resultSet.getString("customer_number");
+                                
+                
+                UserInfo readUserInfo = new UserInfo();
+                readUserInfo.CustomerName =  name;
+                readUserInfo.CustomerAddress = address;
+                readUserInfo.CustomerNumber = number;
+              
+                             
+                userInfo.add(readUserInfo);
             }
         }
         catch (ClassNotFoundException e) {
@@ -324,6 +362,7 @@ public class ShoopeDatabase {
             e.printStackTrace();
         }
     
+        return userInfo;
     }
 
     

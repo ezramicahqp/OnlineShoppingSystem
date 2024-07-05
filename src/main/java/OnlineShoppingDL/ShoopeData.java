@@ -56,8 +56,13 @@ public class ShoopeData {
         return productInfo = shoopeDatabase.GetCartItems();
     }
     
-    public void DeleteItemInCart(ProductInfo prodInfo){
-        shoopeDatabase.DeleteItemInCart(prodInfo.ProductName, prodInfo.ProductColor, prodInfo.ProductSize);
+//    public void DeleteItemInCart(ProductInfo prodInfo){
+//        shoopeDatabase.DeleteItemInCart(prodInfo.ProductName, prodInfo.ProductColor, prodInfo.ProductSize);
+//    }
+    
+    public ArrayList<UserInfo> GetUserInfo(){
+        ArrayList<UserInfo> userInfo;
+        return userInfo = shoopeDatabase.GetUserInfo();
     }
             
 }

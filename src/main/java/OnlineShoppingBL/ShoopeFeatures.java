@@ -47,8 +47,14 @@ public class ShoopeFeatures {
          return products;
     }
     
-    public void DeleteItem(ProductInfo productInfo){
-          shoopeData.DeleteItemInCart(productInfo);
+//    public void DeleteItem(ProductInfo productInfo){
+//          shoopeData.DeleteItemInCart(productInfo);
+//    }
+    
+    public ArrayList<UserInfo> UserInfoDisplay() 
+    {
+         ArrayList<UserInfo> user = shoopeData.GetUserInfo();
+         return user;
     }
 }
 

@@ -9,6 +9,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
 
 
@@ -55,7 +56,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
     
     
     
-    public CheckoutPage(){
+    public CheckoutPage(String ProductName, String Picture, String ProductSize, String ProductColor, int ItemTotal, int Quantity){
                         
         frame.setSize(900, 700);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,15 +71,6 @@ public class CheckoutPage extends JFrame implements ActionListener{
         frame.add(pnlpayment);
         frame.add(pnlplaceOrder);
         
-        MainPanel();
-        PnlProduct();
-        PnlCustomerInfo();
-        PnlDelivery();
-        PnlPaymentMethod();
-        PnlPlaceOrder();
-    }
-       
-    public void MainPanel(){
         
         label.setBounds(130, 20, 150, 25);
         label.setFont(new Font("Times New Roman", Font.BOLD, 18));
@@ -102,18 +94,17 @@ public class CheckoutPage extends JFrame implements ActionListener{
         panel.setBackground(new Color(155, 114, 221));
         panel.setBounds(0, 0, 900, 65);
         panel.setLayout(null);
-    }    
-        
-    public void PnlProduct(){
+
 
         txtProductName.setBounds(300, 30, 500, 20);
-        txtProductName.setText("Street Weaving Spider T-shirt");
+        txtProductName.setText(ProductName);
         txtProductName.setEditable(false);
         txtProductName.setBorder(null);
         txtProductName.setBackground(null);
         pnlproduct.add(txtProductName);
        
         lblProductColor.setBounds(300, 60, 500, 20);
+        txtColor.setText(ProductColor);
         pnlproduct.add(lblProductColor);
         txtColor.setBounds(340, 60, 50, 20);
         txtColor.setEditable(false);
@@ -123,6 +114,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
     
         lblProductSize.setBounds(400, 60, 500, 20);
         pnlproduct.add(lblProductSize);
+        txtSize.setText(ProductSize);
         txtSize.setBounds(440, 60, 50, 20);
         txtSize.setEditable(false);
         txtSize.setBorder(null);
@@ -131,13 +123,14 @@ public class CheckoutPage extends JFrame implements ActionListener{
      
         lblProductQuantity.setBounds(500, 60, 500, 20);
         pnlproduct.add(lblProductQuantity);
+        txtQuantity.setText(String.valueOf(Quantity));
         txtQuantity.setBounds(550, 60, 50, 20);
         txtQuantity.setEditable(false);
         txtQuantity.setBorder(null);
         txtQuantity.setBackground(null);
         pnlproduct.add(txtQuantity);
 
-        txtPrice.setText("Php 559");
+        txtPrice.setText("Php" + String.valueOf(ItemTotal));
         txtPrice.setBounds(300, 110, 500, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
@@ -146,7 +139,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
 
         
         lblPicture.setBounds(100, 15, 130, 130);
-        ImageIcon icon = new ImageIcon(new ImageIcon("spider_tshirt.jpg").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+        ImageIcon icon = new ImageIcon(new ImageIcon(Picture).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
         lblPicture.setIcon(icon);
         pnlproduct.add(lblPicture);
 
@@ -155,48 +148,53 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlproduct.setBounds(0, 70, 900, 160);
         pnlproduct.setBackground(new Color(244, 205, 241));
         pnlproduct.setLayout(null);
-    }
+   
+        ShoopeFeatures shoopeFeatures = new ShoopeFeatures();
+        ArrayList<UserInfo> userInfo = shoopeFeatures.UserInfoDisplay();
 
-    public void PnlCustomerInfo(){
-
-        txtcustomerName.setText("customer name");
+        for (int i = 0; i < userInfo.size(); i++) {
+         
+        final UserInfo user = userInfo.get(i);
+            
+        txtcustomerName.setText(user.CustomerName);
         txtcustomerName.setBounds(50, 25, 450, 20);
         txtcustomerName.setEditable(false);
         txtcustomerName.setBorder(null);
         txtcustomerName.setBackground(null);
         pnlcustomer.add(txtcustomerName);
 
-        txtcustomerNumber.setText("contact number");
+        txtcustomerNumber.setText(user.CustomerNumber);
         txtcustomerNumber.setBounds(500, 25, 200, 20);
         txtcustomerNumber.setEditable(false);
         txtcustomerNumber.setBorder(null);
         txtcustomerNumber.setBackground(null);
         pnlcustomer.add(txtcustomerNumber);
 
-        txtcustomerAddress.setText("customer address");
+        txtcustomerAddress.setText(user.CustomerAddress);
         txtcustomerAddress.setBounds(50, 55, 650, 20);
         txtcustomerAddress.setEditable(false);
         txtcustomerAddress.setBorder(null);
         txtcustomerAddress.setBackground(null);
         pnlcustomer.add(txtcustomerAddress);
         
+        }
+        
         pnlcustomer.setSize(900, 100);
         pnlcustomer.setBounds(0, 235, 900, 100);
         pnlcustomer.setBackground(new Color(244, 205, 241));
         pnlcustomer.setLayout(null);
-    }
-        
-    public void PnlDelivery(){
+    
         
         lbldeliveryDate.setBounds(50, 20, 200, 20);
         pnldelivery.add(lbldeliveryDate);
-        txtdeliveryDate.setText("August 2");
+        txtdeliveryDate.setText("July 13");
         txtdeliveryDate.setBounds(50, 50, 300, 20);
         txtdeliveryDate.setEditable(false);
         txtdeliveryDate.setBorder(null);
         txtdeliveryDate.setBackground(null);
         pnldelivery.add(txtdeliveryDate);
         
+        int sf = 35;
         lblshippingFee.setBounds(500, 20, 100, 20);
         pnldelivery.add(lblshippingFee);
         txtshippingFee.setText("Php 35");
@@ -210,9 +208,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnldelivery.setBounds(0, 340, 900, 100);
         pnldelivery.setBackground(new Color(244, 205, 241));
         pnldelivery.setLayout(null);
-    }   
-        
-    public void PnlPaymentMethod(){
+   
         
         lblpaymentMethod.setBounds(50, 20, 200, 20);
         pnlpayment.add(lblpaymentMethod);
@@ -237,31 +233,41 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlpayment.setBounds(0, 445, 900, 100);
         pnlpayment.setBackground(new Color(244, 205, 241));
         pnlpayment.setLayout(null);
-    }    
-        
-    public void PnlPlaceOrder(){
+
         
         btnplaceOrder.setBounds(750, 25, 120, 20);
+        btnplaceOrder.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(null, "Order placed!", "Order Status", JOptionPane.INFORMATION_MESSAGE);
+            HomePage hp = new HomePage();
+            frame.dispose();
+        } 
+    });
         pnlplaceOrder.add(btnplaceOrder);
+        
+        int orderTotal = ItemTotal + sf;
         
         lblTotal.setBounds(550, 25, 50, 20);
         txtTotal.setBounds(585, 25, 100, 20);
         txtTotal.setEditable(false);
         txtTotal.setBorder(null);
         txtTotal.setBackground(null);
+        txtTotal.setText("Php" + String.valueOf(orderTotal));
         pnlplaceOrder.add(lblTotal);
         pnlplaceOrder.add(txtTotal);
         
         pnlplaceOrder.setSize(900, 70);
         pnlplaceOrder.setBackground(Color.white);
         pnlplaceOrder.setBounds(0, 590, 900, 70);
-        pnlplaceOrder.setLayout(null);    
+        pnlplaceOrder.setLayout(null);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        new HomePage();
-        frame.dispose();
-    }
 }

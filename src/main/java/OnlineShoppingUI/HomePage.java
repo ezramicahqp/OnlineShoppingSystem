@@ -129,10 +129,8 @@ public class HomePage extends JFrame {
        ArrayList<ProductInfo> productInfo = shoopeFeatures.ProductInfoDisplay();
     
     for (int i = 0; i < productInfo.size(); i+=3) {
-    // Create a new panel for each product
     panel1 = new JPanel();
 
-    // Create new instances of JTextField, JButton, and other components for each product
     txtprice = new JTextField();
     producttxt1 = new JTextField();
     btnPic1 = new JButton();

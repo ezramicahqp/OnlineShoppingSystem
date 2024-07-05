@@ -116,7 +116,7 @@ public class ProductView extends JFrame implements ActionListener{
             lblQuantity.setText(String.valueOf(intQuantity));
         } 
     });
-        btnAddQuantity.setBounds(500,200,50,30);
+        btnAddQuantity.setBounds(600,200,50,30);
         panel2.add(btnAddQuantity);
         
         lblQuantity = new JLabel("0");
@@ -132,7 +132,7 @@ public class ProductView extends JFrame implements ActionListener{
             lblQuantity.setText(String.valueOf(intQuantity));}
         } 
     });
-        btnMinusQuantity.setBounds(600,200,50,30);
+        btnMinusQuantity.setBounds(500,200,50,30);
         panel2.add(btnMinusQuantity);
     
         
@@ -212,6 +212,8 @@ public class ProductView extends JFrame implements ActionListener{
             prodInfo.ItemTotal = total;
             
             shoopeFeatures.AddToCart(prodInfo, intQuantity);
+            
+            JOptionPane.showMessageDialog(null, "Added to Cart!", "Item updated!", JOptionPane.INFORMATION_MESSAGE);
         } 
     });
      
