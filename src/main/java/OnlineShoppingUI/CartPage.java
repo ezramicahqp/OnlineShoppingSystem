@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class CartPage extends JFrame implements ActionListener{
@@ -36,8 +37,10 @@ public class CartPage extends JFrame implements ActionListener{
     private final JCheckBox checkBox = new JCheckBox();
     private  ImageIcon logo = new ImageIcon("shoopelogo.png");
     
-    public CartPage(){
+    ShoopeFeatures shoopeFeatures = new ShoopeFeatures();
     
+    public CartPage(){
+     
        //FRAME  
         frame.setTitle("shOOPe");
         frame.setSize(900, 700);
@@ -50,14 +53,7 @@ public class CartPage extends JFrame implements ActionListener{
         frame.add(mainPanel);
         
         
-        UpperPanel();
-        MainPanel();
-        PnlProduct();
-       
-    }  
-       
-    
-    public void UpperPanel(){    //MAIN PANEL
+    //MAIN PANEL
         upperPanel.setSize(900, 65);
         upperPanel.setBackground(new Color(155, 114, 221));
         upperPanel.setBounds(0, 0, 900, 65);
@@ -81,38 +77,32 @@ public class CartPage extends JFrame implements ActionListener{
         upperPanel.add(btnLogo);
         
         btnDelete.setBounds(650, 20, 80, 25);
+        btnDelete.addActionListener(this);
         upperPanel.add(btnDelete);
         
         btnCheckout.setBounds(750, 20, 90, 25);
-        btnCheckout.addActionListener(new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            new CheckoutPage();
-            frame.dispose();
-        } 
-    });
+        btnCheckout.addActionListener(this);
         upperPanel.add(btnCheckout);
         upperPanel.setLayout(null);
-        
-    }   
-    
-    public void MainPanel(){ 
+   
          mainPanel.setBackground(new Color(244, 205, 241));
          mainPanel.setBounds( 0 ,70,900,1000);
          mainPanel.setLayout(null);
 
-         mainPanel.add(pnlproduct); 
-         
-    }
+    
+      
         
-    public void PnlProduct(){
+        int y = 0;
         
-        pnlproduct.setSize(900, 200);
-        pnlproduct.setBounds(0, 0, 900, 200);
-        pnlproduct.setBackground(new Color(244, 205, 241));
-        pnlproduct.setLayout(null);
+
+    
+     ArrayList<ProductInfo> productInfo = shoopeFeatures.CartItemsDisplay();
+    
+    for (int i = 0; i < productInfo.size(); i++) {  
         
-        txtproductName.setText("Street Weaving Spider T-shirt");
+        final ProductInfo product = productInfo.get(i);
+        
+        txtproductName.setText(product.ProductName);
         txtproductName.setBounds(350, 30, 500, 20);
         txtproductName.setEditable(false);
         txtproductName.setBorder(null);
@@ -121,6 +111,7 @@ public class CartPage extends JFrame implements ActionListener{
         
         lblProductSize.setBounds(500, 90, 100, 20);
         pnlproduct.add(lblProductSize);
+        txtSize.setText(product.ProductSize);
         txtSize.setBounds(550, 90, 100, 20);
         txtSize.setEditable(false);
         txtSize.setBorder(null);
@@ -129,6 +120,7 @@ public class CartPage extends JFrame implements ActionListener{
                
         lblProductColor.setBounds(350, 90, 100, 20);
         pnlproduct.add(lblProductColor);
+        txtColor.setText(product.ProductColor);
         txtColor.setBounds(400, 90, 100, 20);
         txtColor.setEditable(false);
         txtColor.setBorder(null);
@@ -136,7 +128,7 @@ public class CartPage extends JFrame implements ActionListener{
         pnlproduct.add(txtColor);
         
         
-        txtPrice.setText("Php 559");
+        txtPrice.setText(String.valueOf(product.ItemTotal));
         txtPrice.setBounds(350, 130, 150, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
@@ -145,6 +137,7 @@ public class CartPage extends JFrame implements ActionListener{
         
         lblProductQuantity.setBounds(650, 90, 150, 20);
         pnlproduct.add(lblProductQuantity);
+        txtQuantity.setText(String.valueOf(product.Quantity));
         txtQuantity.setBounds(700, 90, 100, 20);
         txtQuantity.setEditable(false);
         txtQuantity.setBorder(null);
@@ -154,16 +147,41 @@ public class CartPage extends JFrame implements ActionListener{
         checkBox.setSize(20, 20);
         checkBox.setBounds(50, 80,20, 20);
         checkBox.setBackground(null);
+        checkBox.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==btnDelete){
+            ProductInfo prodInfo = new ProductInfo();
+            
+            prodInfo.ProductName = product.ProductName;
+            prodInfo.ProductSize = product.ProductSize;
+            prodInfo.ProductColor = product.ProductColor;
+            
+            
+            shoopeFeatures.DeleteItem(prodInfo);
+            }else if(e.getSource()==btnCheckout){
+            var x = new CheckoutPage();
+            }
+            frame.dispose();
+        } 
+    });
         pnlproduct.add(checkBox);
         
         
-        ImageIcon product = new ImageIcon(new ImageIcon("spider_tshirt.jpg").getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
-        btnPicture.setIcon(product);
+        ImageIcon productPicture = new ImageIcon(new ImageIcon(product.Picture).getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
+        btnPicture.setIcon(productPicture);
         btnPicture.setBounds(150, 30, 130, 130); 
         btnPicture.setBorder(null);
         pnlproduct.add(btnPicture);
-       
         
+        pnlproduct.setBounds(0, y, 900, 200);
+        pnlproduct.setBackground(new Color(244, 205, 241));
+        pnlproduct.setLayout(null);
+        
+         mainPanel.add(pnlproduct); 
+         y += 200;
+       
+    }  
     } 
 
     @Override

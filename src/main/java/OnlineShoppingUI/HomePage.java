@@ -110,6 +110,7 @@ public class HomePage extends JFrame {
           productsMain.setBackground(new Color(244, 205, 241));
          productsMain.setBounds( 0 ,100,900,600);
          productsMain.setLayout(null);
+         productsMain.setVisible(true);
          
          //productsMain.add(panel1);
          int x = 0 ;
@@ -172,7 +173,7 @@ public class HomePage extends JFrame {
     btnPic1.setBounds(90, 40, 133, 150);
     panel1.add(btnPic1);
 
-    // Adding "Add to Cart" button with ActionListener
+    
     btnAddToCart1.setBounds(150, 220, 100, 20);
     panel1.add(btnAddToCart1);
     
@@ -180,7 +181,7 @@ public class HomePage extends JFrame {
     btnAddToCart1.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });
@@ -188,17 +189,17 @@ public class HomePage extends JFrame {
     btnPic1.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });
 
-    // Setting panel properties
+    
     panel1.setBackground(new Color(244, 205, 241));
     panel1.setLayout(null);
     panel1.setBounds(x, y, 300, 250);
     
-    // Adding the panel to the main container
+    
     productsMain.add(panel1);
     y += 250;
 }    
@@ -209,7 +210,7 @@ for (int i = 1; i < productInfo.size(); i+=3) {
     panel2 = new JPanel();
     panel3 = new JPanel();
 
-    // Create new instances of JTextField, JButton, and other components for each product
+    
    
     
     txtprice1 = new JTextField();
@@ -255,7 +256,7 @@ for (int i = 1; i < productInfo.size(); i+=3) {
     btnAddToCart2.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.ProductID, product.ProductName ,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });
@@ -263,7 +264,7 @@ for (int i = 1; i < productInfo.size(); i+=3) {
     btnPic2.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.ProductName);
+            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });
@@ -327,7 +328,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     btnAddToCart3.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.Picture);
+            var x = new ProductView(product.ProductID, product.Picture,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });
@@ -335,7 +336,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     btnPic3.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            var x = new ProductView(product.Picture);
+            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
             tonsay.dispose();
         } 
     });

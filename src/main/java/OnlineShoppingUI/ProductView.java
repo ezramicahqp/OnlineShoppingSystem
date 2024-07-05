@@ -24,29 +24,32 @@ public class ProductView extends JFrame implements ActionListener{
     JPanel panel2;
 
     
-   private static final String[]Color={"YELLOW","BLUE","RED"};
-   private static final String[]Sizes={"SMALL","MEDIUM","LARGE"};
+  
    private JButton btncart = new JButton();
    private JComboBox <String>cmbcolor;
    private JComboBox <String>cmbsize;
    private JTextField name = new JTextField();
    private JButton btnadd = new JButton("Add to Cart");
-   private JButton btnquantity = new JButton("Quantity");
+   private JButton btnAddQuantity, btnMinusQuantity;
+   private JLabel lblQuantity;
    private JTextField txtPrice = new JTextField();
    private  JButton btnLogo = new JButton();
    private JButton btnPic3 = new JButton();
    private JTextField txtDescription = new JTextField();
+   private int intQuantity = 0;
+   private int total;
+   private int price;
+   private JLabel selectedSize = new JLabel();
+   private JLabel selectedColor = new JLabel();
    
    
-    ProductView(String productName){
-       prodName = productName;
-       shoopeFeatures.GetNameOfProduct(prodName);
-       
-       
-        
+    ProductView(int productID, String productName, int productPrice, String picture){
+ 
         f = new JFrame();
         panel = new JPanel();
         panel2 = new JPanel();
+        
+        this.price = productPrice;
 
     
         f.setTitle("Product View");
@@ -77,25 +80,63 @@ public class ProductView extends JFrame implements ActionListener{
        
         
         
-        cmbcolor = new JComboBox<>(Color);
+        cmbcolor = new JComboBox<>();
+        ArrayList<ProductInfo> colors = shoopeFeatures.GetProductColors();
+        for (int i = 0; i < colors.size(); i++) {
+            
+            final ProductInfo color = colors.get(i);
+            cmbcolor.addItem(color.ProductColor);
+        }
         cmbcolor.setBounds(500,250,100,30);
         panel2.add(cmbcolor);
+        
+        String color = cmbcolor.getSelectedItem().toString();
+        selectedColor.setText( color);
        
         
-        cmbsize = new JComboBox<>(Sizes);
+        cmbsize = new JComboBox<>();
+        ArrayList<ProductInfo> sizes = shoopeFeatures.GetProductSizes();
+        for (int i = 0; i < sizes.size(); i++) {
+            
+            final ProductInfo size = sizes.get(i);
+            cmbsize.addItem(size.ProductSize);
+        }
         cmbsize.setBounds(700,250,100,30);
         panel2.add(cmbsize);
-
-     
-        btnadd.setBounds(500,300,100,30);
-        panel2.add(btnadd);
-     
         
-        btnquantity.setBounds(700,300,100,30);
-        panel2.add(btnquantity);
+        String size = (String) cmbsize.getSelectedItem();
+        selectedSize.setText( size);
+
+        
+        btnAddQuantity = new JButton("+");
+        btnAddQuantity.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            intQuantity++;
+            lblQuantity.setText(String.valueOf(intQuantity));
+        } 
+    });
+        btnAddQuantity.setBounds(500,200,50,30);
+        panel2.add(btnAddQuantity);
+        
+        lblQuantity = new JLabel("0");
+        lblQuantity.setBounds(570,200,30,30);
+        panel2.add(lblQuantity);
+        
+        btnMinusQuantity = new JButton("-");
+        btnMinusQuantity.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(intQuantity > 0){
+            intQuantity--;
+            lblQuantity.setText(String.valueOf(intQuantity));}
+        } 
+    });
+        btnMinusQuantity.setBounds(600,200,50,30);
+        panel2.add(btnMinusQuantity);
     
         
-        name.setText(prodName);
+        name.setText(productName);
         name.setFont(new Font("Roboto", Font.BOLD, 16));
         name.setEditable(false);
         name.setBorder(null);
@@ -103,13 +144,15 @@ public class ProductView extends JFrame implements ActionListener{
         name.setBounds(500,90,300,50);
         panel2.add(name);
         
-        txtPrice.setText(productName);
+        txtPrice.setText(String.valueOf(productPrice));
         txtPrice.setBounds(500,130,300,50);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
         txtPrice.setBackground(null);
         panel2.add(txtPrice);
-    
+        
+        total = intQuantity * productPrice;
+        
        
         ImageIcon logo = new ImageIcon(new ImageIcon("shoopelogo.png").getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
         btnLogo.setIcon(logo);
@@ -124,7 +167,7 @@ public class ProductView extends JFrame implements ActionListener{
     });
         
        btnPic3.setBounds(100,70,320,360);
-       ImageIcon icon3 = new ImageIcon (new ImageIcon("spider_tshirt.jpg").getImage().getScaledInstance(320,360, Image.SCALE_DEFAULT));
+       ImageIcon icon3 = new ImageIcon (new ImageIcon(picture).getImage().getScaledInstance(320,360, Image.SCALE_DEFAULT));
        btnPic3.setIcon(icon3);
        btnPic3.setBorder(null);
        
@@ -143,11 +186,32 @@ public class ProductView extends JFrame implements ActionListener{
         panel2.add(btnPic3);
         panel2.setLayout(null);
         
-     btnadd.addActionListener(new ActionListener(){
+        //ProductInfo productInfo = new ProductInfo();
+        //productInfo.ItemTotal = total;
+        
+    btnadd.setBounds(500,400,100,30);
+    panel2.add(btnadd);
+    btnadd.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
-            new CartPage();
-            f.dispose();
+            total = intQuantity * productPrice;
+            
+            String size = (String) cmbsize.getSelectedItem();
+            selectedSize.setText( size);
+            
+            String color = cmbcolor.getSelectedItem().toString();
+            selectedColor.setText( color);
+            
+            ProductInfo prodInfo = new ProductInfo();
+            prodInfo.ProductID = productID;
+            prodInfo.ProductName = productName;
+            prodInfo.ProductPrice = price;
+            prodInfo.Picture = picture;
+            prodInfo.ProductSize = selectedSize.getText();
+            prodInfo.ProductColor = selectedColor.getText();
+            prodInfo.ItemTotal = total;
+            
+            shoopeFeatures.AddToCart(prodInfo, intQuantity);
         } 
     });
      
@@ -158,6 +222,5 @@ public class ProductView extends JFrame implements ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-  
 }
 

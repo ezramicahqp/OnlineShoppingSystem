@@ -9,5 +9,7 @@ public class ProductInfo {
     public String ProductSize;
     public String ProductColor;
     public int ProductPrice;
+    public int ItemTotal;
     public String Picture;
+    public int Quantity;
 }
