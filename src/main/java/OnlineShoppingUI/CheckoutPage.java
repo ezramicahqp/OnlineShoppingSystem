@@ -9,6 +9,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -49,6 +50,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
     private final JRadioButton btnCard = new JRadioButton("Credit/Debit Card");
     private final JRadioButton btnCOD = new JRadioButton("Cash on Delivery");
     private final ButtonGroup paymentMethods = new ButtonGroup();
+    private JLabel selectedMethod = new JLabel();
     
     private final JButton btnplaceOrder = new JButton("Place Order");
     private final JLabel lblTotal = new JLabel("Total:");
@@ -184,10 +186,12 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlcustomer.setBackground(new Color(244, 205, 241));
         pnlcustomer.setLayout(null);
     
+        LocalDate currentDate = LocalDate.now();
+        LocalDate newDate = currentDate.plusDays(7);
         
         lbldeliveryDate.setBounds(50, 20, 200, 20);
         pnldelivery.add(lbldeliveryDate);
-        txtdeliveryDate.setText("July 13");
+        txtdeliveryDate.setText(String.valueOf(newDate));
         txtdeliveryDate.setBounds(50, 50, 300, 20);
         txtdeliveryDate.setEditable(false);
         txtdeliveryDate.setBorder(null);
@@ -197,7 +201,7 @@ public class CheckoutPage extends JFrame implements ActionListener{
         int sf = 35;
         lblshippingFee.setBounds(500, 20, 100, 20);
         pnldelivery.add(lblshippingFee);
-        txtshippingFee.setText("Php 35");
+        txtshippingFee.setText("Php " + sf);
         txtshippingFee.setBounds(500, 50, 100, 20);
         txtshippingFee.setEditable(false);
         txtshippingFee.setBorder(null);
@@ -234,18 +238,6 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlpayment.setBackground(new Color(244, 205, 241));
         pnlpayment.setLayout(null);
 
-        
-        btnplaceOrder.setBounds(750, 25, 120, 20);
-        btnplaceOrder.addActionListener(new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(null, "Order placed!", "Order Status", JOptionPane.INFORMATION_MESSAGE);
-            HomePage hp = new HomePage();
-            frame.dispose();
-        } 
-    });
-        pnlplaceOrder.add(btnplaceOrder);
-        
         int orderTotal = ItemTotal + sf;
         
         lblTotal.setBounds(550, 25, 50, 20);
@@ -261,6 +253,47 @@ public class CheckoutPage extends JFrame implements ActionListener{
         pnlplaceOrder.setBackground(Color.white);
         pnlplaceOrder.setBounds(0, 590, 900, 70);
         pnlplaceOrder.setLayout(null);
+        
+        
+        btnplaceOrder.setBounds(750, 25, 120, 20);
+        btnplaceOrder.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          
+            
+            String paymentMethod = "";
+                if (btnGCash.isSelected()) {
+                    paymentMethod = "GCash";
+                } else if (btnCard.isSelected()) {
+                    paymentMethod = "Card";
+                } else if (btnCOD.isSelected()) {
+                    paymentMethod = "Cash on Delivery";
+                }
+            
+            ProductInfo prodInfo = new ProductInfo();
+            UserInfo userInfo = new UserInfo();
+            
+            userInfo.CustomerName = txtcustomerName.getText();
+            userInfo.CustomerAddress = txtcustomerAddress.getText();
+            userInfo.CustomerNumber = txtcustomerNumber.getText();
+            prodInfo.DeliveryDate = txtdeliveryDate.getText();
+            prodInfo.PaymentMethod = paymentMethod;
+            prodInfo.ProductName = ProductName;
+            prodInfo.ProductSize = ProductSize;
+            prodInfo.ProductColor = ProductColor;
+            prodInfo.OrderTotal = txtTotal.getText();
+            
+            
+            shoopeFeatures.PlaceOrder(prodInfo, userInfo);
+            
+        JOptionPane.showMessageDialog(null, "Order placed!", "Order Status", JOptionPane.INFORMATION_MESSAGE);
+            HomePage hp = new HomePage();
+            frame.dispose();
+        } 
+    });
+        pnlplaceOrder.add(btnplaceOrder);
+        
+        
         
     }
 

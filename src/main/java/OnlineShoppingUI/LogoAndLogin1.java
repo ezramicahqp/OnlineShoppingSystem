@@ -155,7 +155,7 @@ public class LogoAndLogin1 implements ActionListener {
                 user = features.GetGuestCredentials();
                 
                  if(Username.equals(user.Username) && Password.equals(user.Password)) {
-                     JOptionPane.showMessageDialog(null, "Login Successful. Welcome!", "Login Success", JOptionPane.ERROR_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "Login Successful. Welcome!", "Login Success", JOptionPane.INFORMATION_MESSAGE);
                      HomePage hp = new HomePage();
                      frame.dispose();
 

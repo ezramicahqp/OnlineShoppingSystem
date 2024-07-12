@@ -31,6 +31,7 @@ public class HomePage extends JFrame {
         
         
         private JButton btncart;
+        private JButton btnTransactions;
         private JButton btnLogo;
         private JButton btnAddToCart1;
         private JButton btnAddToCart2;
@@ -59,6 +60,7 @@ public class HomePage extends JFrame {
         productsMain = new JPanel();
         btnLogo = new JButton();
         btncart = new JButton();
+        btnTransactions = new JButton("Orders");
          
         tonsay.setSize(900,700);
         tonsay.setTitle("shOOPe");
@@ -74,7 +76,7 @@ public class HomePage extends JFrame {
   
 // menu 
        ImageIcon cart = new ImageIcon(new ImageIcon("cartIcon.png").getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT));
-       btncart.setBounds(785,25,40,40);
+       btncart.setBounds(700,25,40,40);
        btncart.setIcon(cart);
        btncart.setBackground(null);
        btncart.setBorder(null);
@@ -86,6 +88,18 @@ public class HomePage extends JFrame {
         } 
     });
        panel.add(btncart);
+       
+       btnTransactions.setBounds(760,25,80,40);
+       //btnTransactions.setBackground(null);
+       //btnTransactions.setBorder(null);
+       btnTransactions.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new TransactionPage();
+            tonsay.dispose();
+        } 
+    });
+       panel.add(btnTransactions);
       
        
        lblhome = new JLabel ("HOMEPAGE");
@@ -150,7 +164,7 @@ public class HomePage extends JFrame {
     final ProductInfo product = productInfo.get(i);
     
     // product1
-    txtprice.setText(String.valueOf(product.ProductPrice));
+    txtprice.setText("Php " + String.valueOf(product.ProductPrice));
     txtprice.setBounds(50, 220, 100, 20);
     txtprice.setEditable(false);
     txtprice.setBorder(null);
@@ -222,7 +236,7 @@ for (int i = 1; i < productInfo.size(); i+=3) {
     final ProductInfo product = productInfo.get(i);
         
     // product1
-    txtprice1.setText(String.valueOf(product.ProductPrice));
+    txtprice1.setText("Php " + String.valueOf(product.ProductPrice));
     txtprice1.setBounds(50, 220, 100, 20);
     txtprice1.setEditable(false);
     txtprice1.setBorder(null);
@@ -297,7 +311,7 @@ for (int i = 2; i < productInfo.size(); i+=3) {
     
     
     // product1
-    txtprice2.setText(String.valueOf(product.ProductPrice));
+    txtprice2.setText("Php " + String.valueOf(product.ProductPrice));
     txtprice2.setBounds(50, 220, 100, 20);
     txtprice2.setEditable(false);
     txtprice2.setBorder(null);

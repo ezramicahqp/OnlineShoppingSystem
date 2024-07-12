@@ -364,6 +364,129 @@ public class ShoopeDatabase {
     
         return userInfo;
     }
+    
+    public void PlaceOrder (String CustomerName, String CustomerAdd, String CustomerNum, String DeliveryDate, String PaymentMethod, String ProductName, String ProductSize,String ProductColor,String OrderTotal){
+        
+       String insertStatement 
+        = "INSERT INTO tbl_transaction (customer_name, customer_address, customer_number, delivery_date, payment_method, product_name, product_size, product_color, order_total) VALUES (?,?,?,?,?,?,?,?,?) ";
+       
+       
+       try {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection(url, user, password);
+           PreparedStatement insertCommand = connection.prepareStatement(insertStatement);
+           //ResultSet resultSet = insertCommand.executeQuery();
+
+            {
+            insertCommand.setString(1, CustomerName);   
+            insertCommand.setString(2, CustomerAdd);
+            insertCommand.setString(3, CustomerNum);
+            insertCommand.setString(4, DeliveryDate);
+            insertCommand.setString(5, PaymentMethod);
+            insertCommand.setString(6, ProductName);
+            insertCommand.setString(7, ProductSize);
+            insertCommand.setString(8, ProductColor);
+            insertCommand.setString(9, OrderTotal);
+            
+            insertCommand.executeUpdate();
+            }
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver not found");
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+    }
+    
+    public ArrayList<ProductInfo> GetOrderedProduct(){
+        
+       String selectStatement 
+        = "select checkout_id, product_name, product_size, product_color, order_total,delivery_date, payment_method from tbl_transaction";
+       
+       ArrayList<ProductInfo> productInfo = new ArrayList<ProductInfo>();
+       
+       try {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection(url, user, password);
+           PreparedStatement selectCommand = connection.prepareStatement(selectStatement);
+           ResultSet resultSet = selectCommand.executeQuery();
+
+            while(resultSet.next()) {
+                
+                int checkoutID = resultSet.getInt("checkout_id");
+                String productName = resultSet.getString("product_name");
+                String productSize = resultSet.getString("product_size");
+                String productColor = resultSet.getString("product_color");
+                String orderTotal = resultSet.getString("order_total");
+                String deliveryDate = resultSet.getString("delivery_date");
+                String paymentMethod = resultSet.getString("payment_method");
+                        
+                
+
+
+                ProductInfo readProductInfo = new ProductInfo();
+                readProductInfo.CheckoputID = checkoutID;
+                readProductInfo.ProductName = productName;
+                readProductInfo.ProductSize = productSize;
+                readProductInfo.ProductColor = productColor;
+                readProductInfo.OrderTotal = orderTotal;
+                readProductInfo.DeliveryDate = deliveryDate;
+                readProductInfo.PaymentMethod = paymentMethod;
+              
+               
+                productInfo.add(readProductInfo);
+            }
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver not found");
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+        return productInfo;
+    }
+
+    public ArrayList<UserInfo> GetUserWhoOrdered(){
+        
+       String selectStatement 
+        = "select customer_name, customer_address, customer_number from tbl_transaction";
+       
+       ArrayList<UserInfo> userInfo = new ArrayList<UserInfo>();
+       
+       try {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection(url, user, password);
+           PreparedStatement selectCommand = connection.prepareStatement(selectStatement);
+           ResultSet resultSet = selectCommand.executeQuery();
+
+            while(resultSet.next()) {
+                
+                String customerName = resultSet.getString("customer_name");
+                String customerAddress = resultSet.getString("customer_address");
+                String customerNumber = resultSet.getString("customer_number");
+                   
+                UserInfo readUserInfo = new UserInfo();
+                readUserInfo.CustomerName = customerName;
+                readUserInfo.CustomerAddress = customerAddress;
+                readUserInfo.CustomerNumber = customerNumber;
+              
+               
+                userInfo.add(readUserInfo);
+            }
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver not found");
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+        return userInfo;
+    }
+
 
     
 
