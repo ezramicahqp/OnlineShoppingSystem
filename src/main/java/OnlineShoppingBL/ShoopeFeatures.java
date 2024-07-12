@@ -56,5 +56,23 @@ public class ShoopeFeatures {
          ArrayList<UserInfo> user = shoopeData.GetUserInfo();
          return user;
     }
+    
+    public void PlaceOrder(ProductInfo prodInfo, UserInfo userInfo){
+        
+           shoopeData.PlaceOrder(prodInfo, userInfo);
+       
+    }
+    
+    public ArrayList<ProductInfo> OrderedProductDisplay() 
+    {
+         ArrayList<ProductInfo> products = shoopeData.GetOrderedProduct();
+         return products;
+    }
+    
+    public ArrayList<UserInfo> UserWhoOrderedDisplay() 
+    {
+         ArrayList<UserInfo> userInfo = shoopeData.GetUserWhoOrdered();
+         return userInfo;
+    }
 }
 

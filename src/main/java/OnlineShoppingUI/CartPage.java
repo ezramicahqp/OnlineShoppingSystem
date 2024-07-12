@@ -21,7 +21,7 @@ public class CartPage extends JFrame implements ActionListener{
     private  JLabel label = new JLabel("My Cart");
     private  JButton btnLogo = new JButton();
    // private final JButton btnDelete = new JButton("Delete");
-    private  JButton btnCheckout = new JButton("Checkout");
+    private  JButton btnCheckout;
     
     
     private  JPanel pnlproduct;
@@ -34,8 +34,7 @@ public class CartPage extends JFrame implements ActionListener{
     private  JTextField txtPrice;
     private  JLabel lblProductQuantity;
     private  JTextField txtQuantity;
-    //private  JCheckBox checkBox = new JCheckBox();
-    private  ImageIcon logo = new ImageIcon("shoopelogo.png");
+    
     
     ShoopeFeatures shoopeFeatures = new ShoopeFeatures();
     
@@ -75,28 +74,14 @@ public class CartPage extends JFrame implements ActionListener{
         } 
     });
         upperPanel.add(btnLogo);
+     
         
-//        btnDelete.setBounds(650, 20, 80, 25);
-//        btnDelete.addActionListener(this);
-//        upperPanel.add(btnDelete);
-        
-//        btnCheckout.setBounds(750, 20, 90, 25);
-//        btnCheckout.addActionListener(new ActionListener(){
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            var x = new ProductView(product.ProductID, product.ProductName,product.ProductPrice, product.Picture);
-//            frame.dispose();
-//        } 
-//    });
-//        upperPanel.add(btnCheckout);
         upperPanel.setLayout(null);
    
          mainPanel.setBackground(new Color(244, 205, 241));
          mainPanel.setBounds( 0 ,70,900,1000);
          mainPanel.setLayout(null);
 
-    
-      
         
         int y = 0;
         
@@ -116,83 +101,62 @@ public class CartPage extends JFrame implements ActionListener{
         txtPrice = new JTextField();
         lblProductQuantity = new JLabel("quantity:");
         txtQuantity = new JTextField();
+        btnCheckout = new JButton("Checkout");
         
         final ProductInfo product = productInfo.get(i);
         
         txtproductName = new JTextField();
         txtproductName.setText(product.ProductName);
-        txtproductName.setBounds(350, 30, 500, 20);
+        txtproductName.setBounds(300, 30, 500, 20);
         txtproductName.setEditable(false);
         txtproductName.setBorder(null);
         txtproductName.setBackground(null);
         pnlproduct.add(txtproductName);
         
-        lblProductSize.setBounds(500, 90, 100, 20);
+        lblProductSize.setBounds(450, 90, 100, 20);
         pnlproduct.add(lblProductSize);
         txtSize.setText(product.ProductSize);
-        txtSize.setBounds(550, 90, 100, 20);
+        txtSize.setBounds(500, 90, 100, 20);
         txtSize.setEditable(false);
         txtSize.setBorder(null);
         txtSize.setBackground(null);
         pnlproduct.add(txtSize);
                
-        lblProductColor.setBounds(350, 90, 100, 20);
+        lblProductColor.setBounds(300, 90, 100, 20);
         pnlproduct.add(lblProductColor);
         txtColor.setText(product.ProductColor);
-        txtColor.setBounds(400, 90, 100, 20);
+        txtColor.setBounds(350, 90, 100, 20);
         txtColor.setEditable(false);
         txtColor.setBorder(null);
         txtColor.setBackground(null);
         pnlproduct.add(txtColor);
         
         
-        txtPrice.setText(String.valueOf(product.ItemTotal));
-        txtPrice.setBounds(350, 130, 150, 20);
+        txtPrice.setText("Php " + String.valueOf(product.ItemTotal));
+        txtPrice.setBounds(300, 130, 150, 20);
         txtPrice.setEditable(false);
         txtPrice.setBorder(null);
         txtPrice.setBackground(null);
         pnlproduct.add(txtPrice);
         
-        lblProductQuantity.setBounds(650, 90, 150, 20);
+        lblProductQuantity.setBounds(600, 90, 150, 20);
         pnlproduct.add(lblProductQuantity);
         txtQuantity.setText(String.valueOf(product.Quantity));
-        txtQuantity.setBounds(700, 90, 100, 20);
+        txtQuantity.setBounds(650, 90, 100, 20);
         txtQuantity.setEditable(false);
         txtQuantity.setBorder(null);
         txtQuantity.setBackground(null);
         pnlproduct.add(txtQuantity);
         
-//        checkBox.setSize(20, 20);
-//        checkBox.setBounds(50, 80,20, 20);
-//        checkBox.setBackground(null);
-//        checkBox.addActionListener(new ActionListener(){
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            if(e.getSource()==btnDelete){
-//            ProductInfo prodInfo = new ProductInfo();
-//            
-//            prodInfo.ProductName = product.ProductName;
-//            prodInfo.ProductSize = product.ProductSize;
-//            prodInfo.ProductColor = product.ProductColor;
-//            
-//            
-//            shoopeFeatures.DeleteItem(prodInfo);
-//            }else if(e.getSource()==btnCheckout){
-//            var x = new CheckoutPage();
-//            }
-//            frame.dispose();
-//        } 
-//    });
-//        pnlproduct.add(checkBox);
-        
+
         
         ImageIcon productPicture = new ImageIcon(new ImageIcon(product.Picture).getImage().getScaledInstance(130, 130, Image.SCALE_DEFAULT));
         btnPicture.setIcon(productPicture);
-        btnPicture.setBounds(150, 30, 130, 130); 
+        btnPicture.setBounds(100, 30, 130, 130); 
         btnPicture.setBorder(null);
         pnlproduct.add(btnPicture);
         
-        btnCheckout.setBounds(750, 20, 90, 25);
+        btnCheckout.setBounds(750, 50, 90, 25);
         btnCheckout.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -200,7 +164,7 @@ public class CartPage extends JFrame implements ActionListener{
             frame.dispose();
         } 
         });
-        upperPanel.add(btnCheckout);
+        pnlproduct.add(btnCheckout);
         
         pnlproduct.setBounds(0, y, 900, 200);
         pnlproduct.setBackground(new Color(244, 205, 241));

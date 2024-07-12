@@ -12,4 +12,9 @@ public class ProductInfo {
     public int ItemTotal;
     public String Picture;
     public int Quantity;
+    public int CheckoputID;
+    public String PaymentMethod;
+    public String DeliveryDate;
+    public String OrderTotal;
+    
 }

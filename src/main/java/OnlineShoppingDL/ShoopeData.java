@@ -8,6 +8,7 @@ import OnlineShoppingModels.*;
 public class ShoopeData {
     
         ArrayList<ProductInfo> productInfo;
+        ArrayList<UserInfo> userInfo;
         ShoopeDatabase shoopeDatabase;
         
     public ShoopeData()
@@ -61,8 +62,24 @@ public class ShoopeData {
 //    }
     
     public ArrayList<UserInfo> GetUserInfo(){
-        ArrayList<UserInfo> userInfo;
         return userInfo = shoopeDatabase.GetUserInfo();
+    }
+    
+    public void PlaceOrder(ProductInfo prodInfo, UserInfo userInfo) 
+    {
+        shoopeDatabase.PlaceOrder(userInfo.CustomerName, userInfo.CustomerAddress, userInfo.CustomerNumber, prodInfo.DeliveryDate, prodInfo.PaymentMethod, prodInfo.ProductName, prodInfo.ProductSize, prodInfo.ProductColor, prodInfo.OrderTotal );
+    }
+    
+
+    public ArrayList<ProductInfo> GetOrderedProduct() 
+    {
+       return productInfo = shoopeDatabase.GetOrderedProduct();
+    }
+    
+    
+    public ArrayList<UserInfo> GetUserWhoOrdered() 
+    {
+        return userInfo = shoopeDatabase.GetUserWhoOrdered();
     }
             
 }
